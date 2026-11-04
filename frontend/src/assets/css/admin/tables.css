@@ -1,0 +1,500 @@
+/* ==========================================================================
+   DIA TaxiBrousse — Tables, Blocs, Boutons, Badges & Alertes Administration
+   Palette stricte : #13385C, #DB5323, #FFE7A8, #C0C0BF
+   ========================================================================== */
+
+/* Bloc blanc générique */
+.bloc-blanc {
+  background-color: #ffffff;
+  padding: 1.75rem;
+  border-radius: 18px;
+  border: 1px solid #C0C0BF;
+  box-shadow: 0 1px 3px 0 rgba(19, 56, 92, 0.04), 0 8px 24px -4px rgba(19, 56, 92, 0.04);
+  margin-bottom: 1.5rem;
+}
+
+.bloc-blanc h5 {
+  font-family: var(--police-titre);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #13385C;
+  margin-bottom: 1.25rem;
+}
+
+/* Tables DIA TaxiBrousse */
+.table {
+  --bs-table-bg: transparent;
+  width: 100%;
+  margin-bottom: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table thead th,
+.table thead.table-light th {
+  background-color: #13385C !important;
+  color: #ffffff !important;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.85rem 1rem;
+  border-top: none;
+  border-bottom: 2px solid #DB5323 !important;
+  white-space: nowrap;
+}
+
+.table thead th:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.table thead th:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.table tbody td {
+  padding: 1rem 1rem;
+  color: #1e293b;
+  font-size: 0.88rem;
+  font-weight: 500;
+  border-bottom: 1px solid #C0C0BF;
+  vertical-align: middle;
+}
+
+.table tbody td strong,
+.table tbody td .fw-bold {
+  color: #0f172a;
+}
+
+.table tbody td .text-muted {
+  color: #64748b !important;
+}
+
+.table tbody tr:hover td,
+.table-hover > tbody > tr:hover > * {
+  background-color: rgba(255, 231, 168, 0.18) !important;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Lignes de tableaux spécifiques */
+.table-warning,
+.table-warning > td {
+  background-color: rgba(255, 231, 168, 0.35) !important;
+}
+
+.table-success,
+.table-success > td {
+  background-color: rgba(255, 231, 168, 0.25) !important;
+}
+
+/* ==========================================================================
+   Boutons dans la console Admin (Palette 4 couleurs)
+   ========================================================================== */
+.page-admin .btn-group-sm > .btn, 
+.page-admin .btn-sm {
+  padding: 0.38rem 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.15s ease;
+}
+
+/* Icône poubelle (trash.png) dans les boutons « Supprimer » — alignement et taille */
+.page-admin .btn img[src$="trash.png"],
+.page-client .btn img[src$="trash.png"] {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  vertical-align: -0.15em;
+  margin-right: 0.35rem;
+  flex: 0 0 auto;
+}
+
+/* Bouton principal (Orange #DB5323) */
+.page-admin .btn-primary {
+  background-color: #DB5323 !important;
+  border-color: #DB5323 !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(219, 83, 35, 0.25);
+}
+
+.page-admin .btn-primary:hover,
+.page-admin .btn-primary:focus {
+  background-color: #13385C !important;
+  border-color: #13385C !important;
+  color: #ffffff !important;
+}
+
+/* Bouton contour primaire (Bleu #13385C) */
+.page-admin .btn-outline-primary {
+  color: #13385C !important;
+  border-color: #13385C !important;
+  background-color: transparent !important;
+}
+
+.page-admin .btn-outline-primary:hover,
+.page-admin .btn-outline-primary:focus {
+  color: #ffffff !important;
+  background-color: #13385C !important;
+  border-color: #13385C !important;
+}
+
+/* Boutons secondaires / gris (#C0C0BF) */
+.page-admin .btn-secondary,
+.page-admin .btn-light {
+  background-color: #C0C0BF !important;
+  border-color: #C0C0BF !important;
+  color: #13385C !important;
+}
+
+.page-admin .btn-secondary:hover,
+.page-admin .btn-light:hover {
+  background-color: #13385C !important;
+  border-color: #13385C !important;
+  color: #ffffff !important;
+}
+
+.page-admin .btn-outline-secondary {
+  color: #13385C !important;
+  border-color: #C0C0BF !important;
+  background-color: transparent !important;
+}
+
+.page-admin .btn-outline-secondary:hover {
+  color: #13385C !important;
+  background-color: #C0C0BF !important;
+  border-color: #C0C0BF !important;
+}
+
+/* Boutons danger / suppression (remplacé par Orange #DB5323) */
+.page-admin .btn-danger {
+  background-color: #DB5323 !important;
+  border-color: #DB5323 !important;
+  color: #ffffff !important;
+}
+
+.page-admin .btn-danger:hover {
+  background-color: #13385C !important;
+  border-color: #13385C !important;
+  color: #ffffff !important;
+}
+
+.page-admin .btn-outline-danger {
+  color: #DB5323 !important;
+  border-color: #DB5323 !important;
+  background-color: transparent !important;
+}
+
+.page-admin .btn-outline-danger:hover {
+  color: #ffffff !important;
+  background-color: #DB5323 !important;
+  border-color: #DB5323 !important;
+}
+
+/* Boutons success (remplacé par Bleu #13385C ou Crème #FFE7A8) */
+.page-admin .btn-success,
+.page-admin .btn-outline-success {
+  color: #13385C !important;
+  border-color: #13385C !important;
+  background-color: transparent !important;
+}
+
+.page-admin .btn-outline-success:hover,
+.page-admin .btn-success:hover {
+  color: #ffffff !important;
+  background-color: #13385C !important;
+  border-color: #13385C !important;
+}
+
+/* Boutons warning / info (remplacés par Crème #FFE7A8) */
+.page-admin .btn-warning,
+.page-admin .btn-info {
+  background-color: #FFE7A8 !important;
+  border-color: #FFE7A8 !important;
+  color: #13385C !important;
+}
+
+.page-admin .btn-warning:hover,
+.page-admin .btn-info:hover {
+  background-color: #DB5323 !important;
+  border-color: #DB5323 !important;
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   Badges dans la console Admin (Palette 4 couleurs)
+   ========================================================================== */
+.page-admin .badge {
+  padding: 0.35rem 0.7rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+  border-radius: 9999px;
+  letter-spacing: 0.01em;
+}
+
+/* Badges Bleu nuit (#13385C) */
+.page-admin .badge.bg-primary,
+.page-admin .badge.bg-dark {
+  background-color: #13385C !important;
+  color: #ffffff !important;
+}
+
+/* Badges validés / payés (VERT selon consigne utilisateur) */
+.page-admin .badge.bg-success,
+.page-admin .badge-paye {
+  background-color: #16a34a !important;
+  color: #ffffff !important;
+  border: 1px solid #16a34a !important;
+}
+
+/* Badges avance / acompte (ROUGE selon consigne utilisateur) */
+.page-admin .badge.bg-avance,
+.page-admin .badge-avance {
+  background-color: #dc2626 !important;
+  color: #ffffff !important;
+  border: 1px solid #dc2626 !important;
+}
+
+/* Badges avertissement / attente (Crème #FFE7A8 avec texte bleu #13385C) */
+.page-admin .badge.bg-warning,
+.page-admin .badge.bg-info {
+  background-color: #FFE7A8 !important;
+  color: #13385C !important;
+  border: 1px solid #C0C0BF !important;
+}
+
+/* Badges urgents / remboursement / admin (Orange #DB5323) */
+.page-admin .badge.bg-danger {
+  background-color: #DB5323 !important;
+  color: #ffffff !important;
+}
+
+/* Badges neutres (Gris #C0C0BF) */
+.page-admin .badge.bg-secondary {
+  background-color: #C0C0BF !important;
+  color: #13385C !important;
+  border: 1px solid #C0C0BF !important;
+}
+
+.page-admin .badge.bg-light {
+  background-color: #FFE7A8 !important;
+  color: #13385C !important;
+  border: 1px solid #C0C0BF !important;
+}
+
+/* ==========================================================================
+   Alertes dans la console Admin (Palette 4 couleurs)
+   ========================================================================== */
+.page-admin .alert {
+  border-radius: 12px;
+  border: 1px solid #C0C0BF;
+}
+
+.page-admin .alert-primary,
+.page-admin .alert-info {
+  background-color: rgba(19, 56, 92, 0.08) !important;
+  border-color: #13385C !important;
+  color: #13385C !important;
+}
+
+.page-admin .alert-warning {
+  background-color: #FFE7A8 !important;
+  border-color: #DB5323 !important;
+  color: #13385C !important;
+}
+
+.page-admin .alert-success {
+  background-color: rgba(255, 231, 168, 0.45) !important;
+  border-color: #13385C !important;
+  color: #13385C !important;
+}
+
+.page-admin .alert-danger {
+  background-color: rgba(219, 83, 35, 0.12) !important;
+  border-color: #DB5323 !important;
+  color: #DB5323 !important;
+}
+
+/* ==========================================================================
+   Utilitaires Textes & Couleurs Spécifiques Admin
+   ========================================================================== */
+.page-admin .text-primary {
+  color: #13385C !important;
+}
+
+/* Texte statut payé / succès en vert */
+.page-admin .text-success {
+  color: #16a34a !important;
+}
+
+/* Texte montant dû / alerte en rouge */
+.page-admin .text-danger {
+  color: #dc2626 !important;
+}
+
+.page-admin .text-warning {
+  color: #DB5323 !important;
+}
+
+.page-admin .text-info {
+  color: #13385C !important;
+}
+
+.page-admin .border-primary {
+  border-color: #13385C !important;
+}
+
+.page-admin .border-success {
+  border-color: #13385C !important;
+}
+
+.page-admin .border-warning {
+  border-color: #FFE7A8 !important;
+}
+
+.page-admin .border-danger {
+  border-color: #DB5323 !important;
+}
+
+.page-admin .border-info {
+  border-color: #C0C0BF !important;
+}
+
+/* Spinner */
+.page-admin .spinner-border.text-primary {
+  color: #DB5323 !important;
+}
+
+/* Barres de progression */
+.page-admin .progress {
+  background-color: #C0C0BF !important;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.page-admin .progress-bar {
+  background-color: #DB5323 !important;
+}
+
+.page-admin .progress-bar.bg-primary {
+  background-color: #13385C !important;
+}
+
+.page-admin .progress-bar.bg-warning {
+  background-color: #FFE7A8 !important;
+}
+
+.page-admin .progress-bar.bg-danger {
+  background-color: #DB5323 !important;
+}
+
+/* ==========================================================================
+   Mode Sombre — Tables & Blocs Administration
+   ========================================================================== */
+.mode-sombre .bloc-blanc,
+body.mode-sombre .bloc-blanc {
+  background-color: #111e30 !important;
+  border: 1px solid #1e324d !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+.mode-sombre .bloc-blanc h5,
+body.mode-sombre .bloc-blanc h5 {
+  color: #ffffff !important;
+}
+
+.mode-sombre .page-admin .table,
+body.mode-sombre .page-admin .table {
+  color: #e2e8f0 !important;
+}
+
+.mode-sombre .table thead th,
+.mode-sombre .table thead.table-light th,
+body.mode-sombre .table thead th,
+body.mode-sombre .table thead.table-light th {
+  background-color: #0b1523 !important;
+  color: #ffffff !important;
+  border-bottom: 2px solid #DB5323 !important;
+}
+
+.mode-sombre .table tbody td,
+body.mode-sombre .table tbody td {
+  color: #e2e8f0 !important;
+  border-bottom: 1px solid #1e324d !important;
+}
+
+.mode-sombre .table-hover tbody tr:hover td,
+body.mode-sombre .table-hover tbody tr:hover td {
+  background-color: #16263d !important;
+  color: #ffffff !important;
+}
+
+.mode-sombre .page-admin .text-dark,
+body.mode-sombre .page-admin .text-dark {
+  color: #ffffff !important;
+}
+
+.mode-sombre .page-admin .text-muted,
+body.mode-sombre .page-admin .text-muted {
+  color: #94a3b8 !important;
+}
+
+.mode-sombre .page-admin .text-secondary,
+body.mode-sombre .page-admin .text-secondary {
+  color: #cbd5e1 !important;
+}
+
+.mode-sombre .page-admin .card,
+body.mode-sombre .page-admin .card {
+  background-color: #111e30 !important;
+  border-color: #1e324d !important;
+  color: #ffffff !important;
+}
+
+.mode-sombre .page-admin .bg-light,
+body.mode-sombre .page-admin .bg-light {
+  background-color: #16263d !important;
+  color: #cbd5e1 !important;
+}
+
+.mode-sombre .page-admin .form-control,
+.mode-sombre .page-admin .form-select,
+body.mode-sombre .page-admin .form-control,
+body.mode-sombre .page-admin .form-select {
+  background-color: #0b131e !important;
+  border-color: #1e324d !important;
+  color: #ffffff !important;
+}
+
+.mode-sombre .page-admin .form-control:focus,
+.mode-sombre .page-admin .form-select:focus,
+body.mode-sombre .page-admin .form-control:focus,
+body.mode-sombre .page-admin .form-select:focus {
+  background-color: #0e1726 !important;
+  border-color: #DB5323 !important;
+  color: #ffffff !important;
+}
+
+.mode-sombre .page-admin .stat-carte-moderne,
+body.mode-sombre .page-admin .stat-carte-moderne {
+  background-color: #111e30 !important;
+  border-color: #1e324d !important;
+  color: #ffffff !important;
+}
+
+.mode-sombre .page-admin .stat-valeur,
+body.mode-sombre .page-admin .stat-valeur {
+  color: #ffffff !important;
+}
+
+.mode-sombre .page-admin .stat-label,
+body.mode-sombre .page-admin .stat-label {
+  color: #cbd5e1 !important;
+}

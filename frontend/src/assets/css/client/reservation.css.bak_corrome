@@ -1,0 +1,1141 @@
+/* ==========================================================================
+   DIA TaxiBrousse — Page Réservation Client Moderne (Inspiré Images 1 & 4)
+   ========================================================================== */
+
+/* Barre de recherche unifiée / Filtres */
+.carte-recherche {
+  background-color: var(--bg-carte);
+  padding: 1.5rem 1.75rem;
+  border-radius: 20px;
+  border: 1px solid var(--bordure-couleur);
+  box-shadow: 0 1px 3px 0 rgba(16, 24, 40, 0.03), 0 8px 24px -4px rgba(16, 24, 40, 0.04);
+}
+
+.carte-recherche .form-control,
+.carte-recherche .form-select {
+  border-radius: 12px;
+  border: 1.5px solid var(--bordure-couleur);
+  padding: 0.65rem 0.95rem;
+  font-size: 0.9rem;
+  font-family: var(--police-texte);
+  background-color: var(--bg-carte);
+  color: var(--texte-principal);
+  transition: all 0.2s ease;
+}
+
+.carte-recherche .form-control:focus,
+.carte-recherche .form-select:focus {
+  border-color: #DB5323;
+  box-shadow: 0 0 0 3.5px rgba(219, 83, 35, 0.12);
+  outline: none;
+}
+
+/* Carte Trajet disponible - Style Studio Moderne */
+.carte-trajet-moderne {
+  background-color: var(--bg-carte);
+  border-radius: 20px;
+  border: 1px solid var(--bordure-couleur);
+  padding: 1.35rem;
+  box-shadow: 0 1px 3px 0 rgba(16, 24, 40, 0.03), 0 8px 24px -4px rgba(16, 24, 40, 0.04);
+  transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.25s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.carte-trajet-moderne:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px -4px rgba(15, 23, 42, 0.09);
+  border-color: #cbd5e1;
+}
+
+.entete-carte-haut {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.45rem;
+}
+
+.date-trajet-haut {
+  color: var(--texte-secondaire);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.btn-favori-trajet {
+  background-color: var(--bg-carte-alt);
+  color: #94a3b8;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--bordure-couleur);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-favori-trajet:hover {
+  transform: scale(1.08);
+  color: #DB5323;
+  background-color: #FFE7A8;
+  border-color: #FFE7A8;
+}
+
+.titre-modele-trajet {
+  font-family: var(--police-titre);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--texte-principal);
+  margin-bottom: 0.85rem;
+  line-height: 1.3;
+}
+
+.cadre-photo-vehicule {
+  width: 100%;
+  height: 175px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background-color: var(--bg-carte-alt);
+  border: 1px solid var(--bordure-couleur);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-vehicule-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.5rem;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.carte-trajet-moderne:hover .photo-vehicule-img {
+  transform: scale(1.04);
+}
+
+.grille-caracteristiques {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem 0.85rem;
+  margin-bottom: 1.1rem;
+  background-color: var(--bg-carte-alt);
+  padding: 0.85rem;
+  border-radius: 12px;
+}
+
+.item-caracteristique {
+  font-size: 0.82rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.label-carac {
+  color: var(--texte-secondaire);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.valeur-carac {
+  color: var(--texte-principal);
+  font-weight: 600;
+}
+
+.pied-carte-trajet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--bordure-couleur);
+  margin-top: auto;
+}
+
+.prix-trajet-grand {
+  font-family: var(--police-titre);
+  font-size: 1.28rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--texte-principal);
+}
+
+.btn-reserver-action {
+  background-color: #DB5323;
+  color: #ffffff !important;
+  border: none;
+  border-radius: 10px;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.mode-sombre .btn-reserver-action {
+  background-color: #DB5323;
+  color: #ffffff !important;
+}
+
+.btn-reserver-action:hover {
+  background-color: #c24419;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(219, 83, 35, 0.25);
+}
+
+.mode-sombre .btn-reserver-action:hover {
+  background-color: #c24419;
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   STYLE EXACT INSPIRÉ DU SCREENSHOT — BILLETTERIE TAXI-BROUSSE
+   ========================================================================== */
+
+/* Carte de voyage (Exactement comme dans l'image) */
+/* ==========================================================================
+   CARTE BILLET TAXI-BROUSSE — Layout compact inspiré de l'image de référence
+   ========================================================================== */
+
+.carte-vol-billet {
+  background: #fbfcfe;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 0 18px 0 0;
+  box-shadow: 0 1px 6px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
+  min-height: 118px;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  overflow: hidden;
+}
+
+.carte-vol-billet:hover {
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.09);
+  border-color: #cbd5e1;
+}
+
+.mode-sombre .carte-vol-billet {
+  background: #0f172a;
+  border-color: #1e293b;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Bande orange à gauche avec numéro ticket (texte horizontal, bien en valeur) */
+.badge-ticket-orange {
+  background: linear-gradient(180deg, #DB5323, #f97316);
+  color: #ffffff;
+  padding: 12px 18px;
+  border-radius: 14px 0 0 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  flex-shrink: 0;
+  min-width: 96px;
+  align-self: stretch;
+}
+
+.ticket-ref-vertical {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  writing-mode: horizontal-tb;
+  transform: none;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.ticket-label-vertical {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.85;
+  white-space: nowrap;
+  writing-mode: horizontal-tb;
+  transform: none;
+  text-align: center;
+}
+
+
+/* Colonne Départ : code ville + nom + date + heure */
+.col-depart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 110px;
+}
+
+/* Code ville (ex: TNR) */
+.ville-code-grand {
+  font-size: 13px;
+  font-weight: 800;
+  color: #334155;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.mode-sombre .ville-code-grand {
+  color: #94a3b8;
+}
+
+/* Nom de la ville en dessous du code */
+.ville-nom-compact {
+  font-size: 13px;
+  color: #0f172a;
+  font-weight: 700;
+  margin-top: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 130px;
+}
+
+.mode-sombre .ville-nom-compact {
+  color: #f8fafc;
+}
+
+/* Date en petit */
+.date-compact {
+  font-size: 10px;
+  color: #94a3b8;
+  margin-top: 1px;
+  font-weight: 500;
+}
+
+/* Heure en gras orange — c'est l'info principale */
+.heure-principale {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+  margin-top: 3px;
+  line-height: 1;
+}
+
+.mode-sombre .heure-principale {
+  color: #f8fafc;
+}
+
+/* Colonne Axe (ligne + minibus entre les deux villes) */
+.col-axe {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 14px;
+  min-width: 110px;
+}
+
+.axe-trajet {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 16px;
+}
+
+.noeud {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 2px solid #94a3b8;
+  background-color: #fbfcfe;
+  flex-shrink: 0;
+}
+
+.mode-sombre .noeud {
+  background-color: #0f172a;
+  border-color: #475569;
+}
+
+.segment-ligne {
+  flex: 1;
+  height: 1.5px;
+  background-color: #e2e8f0;
+}
+
+.mode-sombre .segment-ligne {
+  background-color: #334155;
+}
+
+.icone-minibus-centre {
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+  color: #DB5323;
+  flex-shrink: 0;
+}
+
+.svg-minibus {
+  width: 20px;
+  height: 12px;
+  color: #DB5323;
+}
+
+.mode-sombre .svg-minibus {
+  color: #f97316;
+}
+
+.label-axe-trajet {
+  font-size: 10px;
+  color: #94a3b8;
+  margin-top: 3px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+/* Colonne Arrivée (symétrique au départ) */
+.col-arrivee {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 100px;
+}
+
+/* Séparateur vertical fin */
+.separateur-vertical {
+  width: 1px;
+  background-color: #e8ecf0;
+  align-self: stretch;
+  margin: 4px 16px;
+  flex-shrink: 0;
+}
+
+.mode-sombre .separateur-vertical {
+  background-color: #1e293b;
+}
+
+/* Colonne Infos (Véhicule / Places / Paiement) */
+.col-infos-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 160px;
+  flex-shrink: 0;
+}
+
+.info-compact-ligne {
+  font-size: 12px;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  flex-wrap: wrap;
+  line-height: 1.4;
+}
+
+.info-compact-ligne strong {
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.mode-sombre .info-compact-ligne strong {
+  color: #f1f5f9;
+}
+
+.info-flat-label,
+.info-label {
+  color: #64748b;
+  font-weight: 600;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.mode-sombre .info-flat-label,
+.mode-sombre .info-label {
+  color: #94a3b8;
+}
+
+.immatriculation {
+  color: #0284c7;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.mode-sombre .immatriculation {
+  color: #38bdf8;
+}
+
+.info-telephone {
+  color: #64748b;
+  font-size: 11px;
+}
+
+/* Colonne Prix + Statut + Bouton */
+.col-prix-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  min-width: 170px;
+  flex-shrink: 0;
+  gap: 6px;
+  padding: 6px 0 6px 8px;
+}
+
+.prix-gras {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.mode-sombre .prix-gras {
+  color: #f8fafc;
+}
+
+.passager-info {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.mode-sombre .passager-info {
+  color: #94a3b8;
+}
+
+.statut-ligne {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+
+/* Filtre liste déroulante */
+.filtre-select-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.filtre-select-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #64748b;
+}
+
+.mode-sombre .filtre-select-label {
+  color: #94a3b8;
+}
+
+.filtre-select-statut {
+  appearance: none;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2364748b' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 9px 36px 9px 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #0f172a;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  min-width: 220px;
+  outline: none;
+}
+
+.filtre-select-statut:focus {
+  border-color: #DB5323;
+  box-shadow: 0 0 0 3px rgba(219, 83, 35, 0.12);
+}
+
+.mode-sombre .filtre-select-statut {
+  background-color: #1e293b;
+  border-color: #334155;
+  color: #f8fafc;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2394a3b8' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+}
+
+/* Ancien bloc action (compatibilité) */
+.bloc-action {
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+}
+
+
+
+.ref-vol-texte {
+  font-size: 11.5px;
+  color: #64748b;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  white-space: nowrap;
+}
+
+.mode-sombre .ref-vol-texte {
+  color: #94a3b8;
+}
+
+/* Prix en grand format texte bien visible (pas un bouton) */
+.prix-affiche-texte {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 23px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.mode-sombre .prix-affiche-texte {
+  color: #f8fafc;
+}
+
+/* Bouton Télécharger épuré */
+.btn-action-telecharger {
+  background-color: #0284c7;
+  color: #ffffff !important;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 20px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  box-shadow: 0 3px 10px rgba(2, 132, 199, 0.25);
+  width: 100%;
+  max-width: 165px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  text-decoration: none;
+}
+
+.btn-action-telecharger:hover {
+  background-color: #0369a1;
+  box-shadow: 0 5px 14px rgba(2, 132, 199, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-action-telecharger:active {
+  transform: translateY(0);
+}
+
+.icone-btn-svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* Méta sous le bouton : Passagers & Statut sans émojis */
+.meta-sous-bouton {
+  width: 100%;
+  max-width: 165px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  font-size: 12px;
+  padding: 0 2px;
+}
+
+.meta-passager {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mode-sombre .meta-passager {
+  color: #94a3b8;
+}
+
+/* Badges de statut professionnels sans émojis */
+.badge-statut-pill {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  display: inline-block;
+  line-height: 1.3;
+}
+
+.statut-paye {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.mode-sombre .statut-paye {
+  background-color: rgba(22, 163, 74, 0.2);
+  color: #4ade80;
+}
+
+.statut-rembourse {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.mode-sombre .statut-rembourse {
+  background-color: rgba(220, 38, 38, 0.2);
+  color: #f87171;
+}
+
+.statut-avance {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.mode-sombre .statut-avance {
+  background-color: rgba(217, 119, 6, 0.2);
+  color: #fbbf24;
+}
+
+.statut-attente {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.mode-sombre .statut-attente {
+  background-color: rgba(2, 132, 199, 0.2);
+  color: #38bdf8;
+}
+
+.statut-reporte {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+.mode-sombre .statut-reporte {
+  background-color: #1e293b;
+  color: #94a3b8;
+}
+
+.statut-autre {
+  background-color: #f1f5f9;
+  color: #334155;
+}
+
+.actions-secondaires-discretes {
+  margin-top: 6px;
+  font-size: 11.5px;
+  display: flex;
+  gap: 6px;
+  color: #94a3b8;
+}
+
+.lien-secondaire {
+  color: #0284c7;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.lien-secondaire:hover {
+  color: #0369a1;
+}
+
+/* --- Carte Filtres Latérale ("NARROW RESULTS" comme sur l'image) --- */
+.carte-filtres-lateral {
+  background: #ffffff;
+  border: 1px solid #edf0f5;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 3px 14px rgba(18, 38, 63, 0.03);
+}
+
+.mode-sombre .carte-filtres-lateral {
+  background: #111e30;
+  border-color: #1e324d;
+}
+
+.titre-narrow {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  color: #1e2022;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.mode-sombre .titre-narrow {
+  color: #ffffff;
+}
+
+.sous-titre-narrow {
+  font-size: 12px;
+  color: #8c98a4;
+  margin-top: 2px;
+}
+
+.label-groupe-filtre {
+  font-size: 12px;
+  font-weight: 700;
+  color: #495057;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mode-sombre .label-groupe-filtre {
+  color: #cbd5e1;
+}
+
+.btn-reset-all {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 12px;
+  color: #8c98a4;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.btn-reset-all:hover {
+  color: #1d78f2;
+}
+
+.liste-checkbox-destinations {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item-checkbox-filtre {
+  font-size: 13px;
+  color: #495057;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: background 0.12s;
+  user-select: none;
+}
+
+.item-checkbox-filtre:hover {
+  background-color: #f8fafc;
+}
+
+.mode-sombre .item-checkbox-filtre {
+  color: #cbd5e1;
+}
+
+.mode-sombre .item-checkbox-filtre:hover {
+  background-color: #16263d;
+}
+
+.label-champ-filtre {
+  font-size: 12px;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.mode-sombre .label-champ-filtre {
+  color: #cbd5e1;
+}
+
+.select-filtre-custom {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #dcdfe6;
+  padding: 7px 10px;
+  font-size: 13px;
+  color: #495057;
+  background-color: #ffffff;
+  outline: none;
+}
+
+.mode-sombre .select-filtre-custom {
+  background-color: #16263d;
+  color: #ffffff;
+  border-color: #1e324d;
+}
+
+.btn-search-correct {
+  display: block;
+  width: 100%;
+  text-align: center;
+  border: 1.5px solid #dcdfe6;
+  background-color: #ffffff;
+  color: #495057;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+
+.btn-search-correct:hover {
+  border-color: #1d78f2;
+  color: #1d78f2;
+  background-color: rgba(29, 120, 242, 0.04);
+}
+
+.mode-sombre .btn-search-correct {
+  background-color: #16263d;
+  border-color: #1e324d;
+  color: #cbd5e1;
+}
+
+/* Responsivité Mobile / Tablette */
+@media (max-width: 991.98px) {
+  .carte-vol-billet {
+    padding: 0;
+    flex-direction: row; /* garde barre verticale même sur mobile */
+  }
+
+  .badge-ticket-orange {
+    border-radius: 16px 0 0 16px;
+    min-width: 56px;
+    padding: 12px 10px;
+    font-size: 10px;
+  }
+
+  .carte-vol-corps {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 14px 16px 18px 16px;
+  }
+
+  .bloc-timeline-trajet,
+  .bloc-timeline {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .bloc-infos-flat,
+  .bloc-essentiel-infos {
+    border-top: 1px dashed #e2e8f0;
+    border-bottom: 1px dashed #e2e8f0;
+    padding: 10px 0;
+  }
+
+  .mode-sombre .bloc-infos-flat,
+  .mode-sombre .bloc-essentiel-infos {
+    border-color: #1e293b;
+  }
+
+  .bloc-action {
+    border-top: none;
+    padding-top: 4px;
+    min-width: 100%;
+  }
+
+  .btn-action-telecharger,
+  .btn-pilule-bleu {
+    max-width: 100%;
+  }
+
+  .meta-sous-bouton {
+    max-width: 100%;
+  }
+
+  .filtre-select-wrapper {
+    align-items: stretch;
+  }
+
+  .filtre-select-statut {
+    min-width: 100%;
+  }
+}
+
+
+/* Grille des Cartes de Paiement */
+.grille-cartes-paiement {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.carte-option-paiement {
+  border: 1.5px solid var(--bordure-couleur);
+  background-color: var(--bg-carte);
+  border-radius: 14px;
+  padding: 0.85rem 0.75rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.carte-option-paiement:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+}
+
+.carte-option-paiement.active {
+  border-color: #DB5323;
+  background-color: rgba(219, 83, 35, 0.06);
+  box-shadow: 0 0 0 3px rgba(219, 83, 35, 0.12);
+}
+
+.pastille-operateur {
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.pastille-mvola { color: #00875a; }
+.pastille-orange { color: #DB5323; }
+.pastille-airtel { color: #dc2626; }
+.pastille-cb { color: #13385C; }
+.pastille-especes { color: #475569; }
+
+/* ===== Plan Visuel des Sièges (Conforme Exactement à l'Image) ===== */
+.plan-vehicule-visuel {
+  background-color: #ffffff;
+  border: 1.5px solid var(--bordure-couleur);
+  border-radius: 22px;
+  padding: 2rem 2.25rem;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  align-items: center;
+  box-shadow: 0 2px 6px 0 rgba(16, 24, 40, 0.06);
+  max-width: 100%;
+}
+
+.mode-sombre .plan-vehicule-visuel {
+  background-color: var(--bg-carte);
+}
+
+.plan-rangee {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.plan-rangee-avant {
+  padding-bottom: 0.75rem;
+  border-bottom: 2px dashed var(--bordure-couleur);
+  margin-bottom: 0.35rem;
+}
+
+/* Siège normal / libre : NOIR plein comme sur l'image */
+.plan-siege {
+  width: 56px;
+  height: 48px;
+  border-radius: 8px;
+  background-color: #111827;
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.plan-siege:hover:not(.siege-occupe):not(.conducteur-siege):not(.invisible) {
+  background-color: #DB5323;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(219, 83, 35, 0.35);
+}
+
+/* Siège conducteur : ROUGE vif plein comme sur l'image */
+.plan-siege.conducteur-siege {
+  background-color: #dc2626 !important;
+  border-color: #b91c1c !important;
+  color: #ffffff !important;
+  cursor: default;
+  font-weight: 800;
+}
+
+/* Siège sélectionné : Bleu DIA avec contour Orange */
+.plan-siege.siege-selectionne {
+  background-color: #13385C !important;
+  border-color: #DB5323 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(219, 83, 35, 0.45);
+  transform: scale(1.05);
+}
+
+/* Siège occupé : Gris, lisible mais peu cliquable */
+.plan-siege.siege-occupe {
+  background-color: #9ca3af !important;
+  border-color: #9ca3af !important;
+  color: #ffffff !important;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* Case vide pour alignement rigoureux des colonnes */
+.plan-siege.invisible {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  cursor: default;
+  pointer-events: none;
+}
+
+.plan-couloir {
+  width: 24px;
+  flex-shrink: 0;
+}
+
+/* Légende des couleurs : lisible, bien espacée */
+.badge-legende {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  flex-shrink: 0;
+  opacity: 1;
+}
+
+.badge-legende.libre {
+  background-color: #111827;
+  opacity: 1;
+}
+
+.badge-legende.selectionne {
+  background-color: #13385C;
+  border-color: #DB5323;
+}
+
+.badge-legende.occupe {
+  background-color: #9ca3af;
+  opacity: 0.8;
+}
+
+.badge-legende.conducteur {
+  background-color: #dc2626;
+  opacity: 1;
+}
+
+
+

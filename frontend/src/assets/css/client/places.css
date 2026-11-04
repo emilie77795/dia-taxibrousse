@@ -1,0 +1,186 @@
+/* ==========================================================================
+   DIA TaxiBrousse — Choix des Places & Réservation Client (places.css)
+   ========================================================================== */
+
+/* Compteur de places : pastille sobre, bordure et écriture noires */
+.compte-places {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0f172a;
+  border: 1.5px solid #0f172a;
+  border-radius: 9999px;
+  padding: 0.3rem 0.85rem;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.mode-sombre .compte-places {
+  color: #f1f5f9;
+  border-color: #f1f5f9;
+}
+
+/* Cartes logos opérateurs : logo entier, centré, taille normale */
+.carte-logo-operateur {
+  padding: 6px !important;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Fond aux couleurs de chaque opérateur (mesurées sur les images) */
+.fond-mvola {
+  background-color: #FFD101;
+  border-color: #d9b103;
+}
+
+.fond-orange {
+  background-color: #000000;
+  border-color: #000000;
+}
+
+.fond-airtel {
+  background-color: #E92227;
+  border-color: #c11116;
+}
+
+/* Carte sélectionnée : on garde la couleur du carré, juste une ombre portée */
+.carte-logo-operateur.active {
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.28) !important;
+  transform: translateY(-2px);
+}
+
+.fond-mvola.active {
+  background-color: #FFD101 !important;
+  border-color: #d9b103 !important;
+}
+
+.fond-orange.active {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+.fond-airtel.active {
+  background-color: #E92227 !important;
+  border-color: #c11116 !important;
+}
+
+/* Logos opérateurs Mobile Money : taille normale, bien visibles */
+.logo-operateur {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Méta-ligne véhicule : typographie épurée, sans badges-boutons */
+.resume-meta-vehicule {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  padding-bottom: 0.35rem;
+  margin-bottom: 0;
+}
+
+.meta-vehicule-gauche {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.vehicule-type {
+  font-family: var(--police-titre, 'Figtree', sans-serif);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #13385C;
+  letter-spacing: 0.02em;
+  background-color: #FFE7A8;
+  border: 1px solid rgba(219, 83, 35, 0.25);
+  border-radius: 9999px;
+  padding: 0.3rem 0.85rem;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.vehicule-matricule {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.meta-depart-droite {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+.depart-label {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.depart-heure {
+  font-family: var(--police-titre, 'Figtree', sans-serif);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #DB5323;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.mode-sombre .vehicule-type {
+  color: #f1f5f9;
+}
+
+.mode-sombre .vehicule-matricule {
+  color: #94a3b8;
+}
+
+/* Résumé trajet façon billet : départ — axe minibus — arrivée */
+.resume-trajet-billet {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0.85rem 0 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.resume-trajet-billet .col-depart {
+  min-width: 130px;
+}
+
+.resume-trajet-billet .col-arrivee {
+  min-width: 120px;
+}
+
+.resume-trajet-billet .ville-code-grand {
+  font-size: 1.35rem;
+}
+
+.resume-trajet-billet .ville-nom-compact {
+  font-size: 0.95rem;
+  max-width: 160px;
+}
+
+@media (max-width: 576px) {
+  .resume-trajet-billet .col-axe {
+    padding: 0 6px;
+    min-width: 70px;
+  }
+  .resume-trajet-billet .col-depart,
+  .resume-trajet-billet .col-arrivee {
+    min-width: 0;
+  }
+  .resume-trajet-billet .ville-nom-compact {
+    max-width: 90px;
+  }
+}

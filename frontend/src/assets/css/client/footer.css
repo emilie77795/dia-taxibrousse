@@ -1,0 +1,46 @@
+/* ==========================================================================
+   DIA TaxiBrousse — Pied de Page Client (Bleu Nuit #13385C)
+   ========================================================================== */
+
+.pied-page-client {
+  margin-top: auto;
+  position: static;
+  width: 100%;
+  background-color: #13385C;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 2.2rem 0;
+  font-size: 0.88rem;
+  color: #C0C0BF;
+  box-shadow: 0 -4px 20px rgba(19, 56, 92, 0.2);
+}
+
+.logo-footer {
+  height: 170px;
+  max-height: 170px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+  display: block;
+}
+
+.logo-footer:hover {
+  transform: scale(1.05);
+}
+
+.logo-footer-sombre {
+  display: none !important;
+}
+
+.mode-sombre .logo-footer-clair {
+  display: none !important;
+}
+
+.mode-sombre .logo-footer-sombre {
+  display: block !important;
+}
+
+.texte-copyright {
+  color: #C0C0BF;
+  line-height: 1.5;
+}
+

@@ -1,0 +1,44 @@
+/* ==========================================================================
+   DIA TaxiBrousse — Notifications Client (notifications.css)
+   ========================================================================== */
+
+.carte-notif {
+  transition: box-shadow 0.2s, transform 0.15s;
+  cursor: pointer;
+}
+
+.carte-notif:hover {
+  box-shadow: 0 4px 20px rgba(19, 56, 92, 0.12) !important;
+  transform: translateY(-1px);
+}
+
+.carte-notif-nonlue {
+  border-left: 4px solid #DB5323 !important;
+  background: #fffcf9 !important;
+}
+
+.mode-sombre .carte-notif {
+  background-color: #111e30 !important;
+  border-color: #1e324d !important;
+  color: #e2e8f0 !important;
+}
+
+.mode-sombre .carte-notif-nonlue {
+  background-color: #16263d !important;
+  border-left: 4px solid #DB5323 !important;
+}
+
+.mode-sombre .carte-notif p,
+.mode-sombre .carte-notif .text-dark {
+  color: #ffffff !important;
+}
+
+.notif-icone-cercle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}

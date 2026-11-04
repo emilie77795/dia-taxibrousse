@@ -1,0 +1,328 @@
+/* ==========================================================================
+   DIA TaxiBrousse — Layout Administration (Palette Officielle 4 Couleurs)
+   Couleurs : #13385C (Bleu), #DB5323 (Orange), #FFE7A8 (Crème), #C0C0BF (Gris)
+   ========================================================================== */
+
+/* Structure globale */
+.page-admin {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f7f7f8;
+  font-family: var(--police-texte, 'Figtree', sans-serif);
+  color: #13385C;
+}
+
+/* Barre latérale DIA TaxiBrousse (Bleu officiel #13385C) */
+.menu-lateral {
+  width: 270px;
+  background-color: #13385C;
+  color: #ffffff;
+  border-right: 1px solid #C0C0BF;
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem 1.15rem;
+  flex-shrink: 0;
+  z-index: 50;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+  transition: width 0.25s ease;
+}
+
+.logo-menu {
+  padding-bottom: 1.35rem;
+  border-bottom: 1px solid rgba(192, 192, 191, 0.25);
+  margin-bottom: 1.5rem;
+}
+
+.logo-menu .titre {
+  display: block;
+  font-family: var(--police-titre);
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  color: #FFE7A8;
+}
+
+.logo-menu .sous-titre {
+  font-family: var(--police-texte);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #C0C0BF;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+/* Liste de navigation bien espacée */
+.navigation-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  flex-grow: 1;
+}
+
+.lien-menu {
+  text-decoration: none;
+  color: #ffffff;
+  opacity: 0.88;
+  padding: 0.82rem 1.05rem;
+  border-radius: 12px;
+  font-family: var(--police-texte);
+  font-size: 0.92rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.lien-menu:hover {
+  color: #ffffff;
+  opacity: 1;
+  background-color: rgba(255, 231, 168, 0.16);
+  transform: translateX(2px);
+}
+
+.lien-menu.actif {
+  color: #ffffff;
+  opacity: 1;
+  background-color: #DB5323;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(219, 83, 35, 0.35);
+}
+
+/* Icônes blanches pour contraste parfait sur fond sombre */
+.icone-menu {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-right: 0.85rem;
+  flex: 0 0 auto;
+  filter: brightness(0) invert(1) !important;
+  opacity: 0.95 !important;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.lien-menu:hover .icone-menu,
+.lien-menu.actif .icone-menu {
+  filter: brightness(0) invert(1) !important;
+  opacity: 1 !important;
+  transform: scale(1.08);
+}
+
+/* Pied de sidebar */
+.bas-menu {
+  padding-top: 1.25rem;
+  margin-top: auto;
+  border-top: 1px solid rgba(192, 192, 191, 0.25);
+}
+
+.profil-utilisateur .nom {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #ffffff;
+  word-break: break-all;
+}
+
+.badge-role {
+  display: inline-block;
+  padding: 0.18rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-top: 0.25rem;
+  background-color: #FFE7A8;
+  color: #13385C;
+}
+
+.bas-menu .btn-deconnexion,
+.bas-menu .btn-outline-secondary {
+  border-color: #C0C0BF !important;
+  color: #ffffff !important;
+  background-color: transparent !important;
+}
+
+.bas-menu .btn-deconnexion:hover,
+.bas-menu .btn-outline-secondary:hover {
+  background-color: #DB5323 !important;
+  border-color: #DB5323 !important;
+  color: #ffffff !important;
+}
+
+/* Zone de contenu principale */
+.contenu-principal {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background-color: #f7f7f8;
+}
+
+.contenu-principal > main {
+  flex-grow: 1;
+  padding: 2rem !important;
+}
+
+/* Barre supérieure épurée */
+.barre-superieure {
+  background-color: #ffffff;
+  padding: 1.1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #C0C0BF;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.barre-superieure h4 {
+  font-family: var(--police-titre);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #13385C;
+  margin: 0;
+}
+
+/* Pied de page administration */
+.pied-page-admin {
+  background-color: #ffffff;
+  border-top: 1px solid #C0C0BF;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  color: #13385C;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* ---------------- Responsive Admin ---------------- */
+@media (max-width: 992px) {
+  .page-admin {
+    flex-direction: column;
+  }
+
+  .menu-lateral {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #C0C0BF;
+    padding: 1rem;
+  }
+
+  .navigation-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.35rem;
+  }
+
+  .contenu-principal > main {
+    padding: 1.25rem !important;
+  }
+
+  .barre-superieure {
+    padding: 1rem 1.25rem;
+  }
+}
+
+/* ==========================================================================
+   Mode Sombre — Administration
+   ========================================================================== */
+.mode-sombre.page-admin,
+.mode-sombre .page-admin,
+body.mode-sombre .page-admin {
+  background-color: #0b131e !important;
+  color: #ffffff !important;
+}
+
+.mode-sombre .contenu-principal,
+body.mode-sombre .contenu-principal {
+  background-color: #0b131e !important;
+}
+
+.mode-sombre .barre-superieure,
+body.mode-sombre .barre-superieure {
+  background-color: #111e30 !important;
+  border-bottom: 1px solid #1e324d !important;
+  color: #ffffff !important;
+}
+
+.mode-sombre .barre-superieure h4,
+body.mode-sombre .barre-superieure h4 {
+  color: #ffffff !important;
+}
+
+.mode-sombre .menu-lateral,
+body.mode-sombre .menu-lateral {
+  background-color: #0d1a2d !important;
+  border-right: 1px solid #1e324d !important;
+}
+
+.mode-sombre .pied-page-admin,
+body.mode-sombre .pied-page-admin {
+  background-color: #111e30 !important;
+  border-top: 1px solid #1e324d !important;
+  color: #cbd5e1 !important;
+}
+
+.mode-sombre .btn-cloche,
+body.mode-sombre .btn-cloche {
+  background-color: #16263d !important;
+  border: 1px solid #1e324d !important;
+}
+
+.mode-sombre .panneau-notifications,
+body.mode-sombre .panneau-notifications {
+  background-color: #111e30 !important;
+  border: 1px solid #1e324d !important;
+  color: #e2e8f0 !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5) !important;
+}
+
+.mode-sombre .entete-panneau-notif,
+body.mode-sombre .entete-panneau-notif {
+  border-bottom: 1px solid #1e324d !important;
+  color: #ffffff !important;
+}
+
+.mode-sombre .item-notif-panneau,
+body.mode-sombre .item-notif-panneau {
+  border-bottom: 1px solid #1e324d !important;
+}
+
+.mode-sombre .item-notif-panneau:hover,
+body.mode-sombre .item-notif-panneau:hover {
+  background-color: #16263d !important;
+}
+
+.mode-sombre .item-notif-panneau .titre,
+body.mode-sombre .item-notif-panneau .titre {
+  color: #ffffff !important;
+}
+
+.mode-sombre .item-notif-panneau .desc,
+body.mode-sombre .item-notif-panneau .desc {
+  color: #cbd5e1 !important;
+}
+
+/* ==========================================================================
+   Boutons Admin harmonisés — Forme rectangulaire arrondie cohérente
+   ========================================================================== */
+.btn {
+  font-family: var(--police-texte, 'Figtree', sans-serif);
+  font-weight: 700;
+  border-radius: 10px !important;
+  transition: all 0.2s ease;
+}
+
+.btn.btn-sm {
+  border-radius: 8px !important;
+}
+
+.btn.rounded-pill,
+.btn-sm.rounded-pill {
+  border-radius: 8px !important;
+}

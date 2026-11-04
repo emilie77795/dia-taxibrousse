@@ -1,0 +1,167 @@
+/* ==========================================================================
+   DIA TaxiBrousse — Fenêtres Modales Administration (Palette 4 Couleurs)
+   Palette : #13385C, #DB5323, #FFE7A8, #C0C0BF
+   ========================================================================== */
+
+/* Fond sombre modale teinté en Bleu DIA */
+.fond-modale {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(19, 56, 92, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.boite-modale {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid #C0C0BF;
+  box-shadow: 0 20px 45px -12px rgba(19, 56, 92, 0.25);
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.boite-modale h5 {
+  font-family: var(--police-titre);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #13385C;
+}
+
+.boite-modale .form-control,
+.boite-modale .form-select,
+.page-admin .form-control,
+.page-admin .form-select {
+  border-radius: 10px;
+  border: 1.5px solid #C0C0BF;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.9rem;
+  color: #13385C;
+}
+
+.boite-modale .form-control:focus,
+.boite-modale .form-select:focus,
+.page-admin .form-control:focus,
+.page-admin .form-select:focus {
+  border-color: #DB5323;
+  box-shadow: 0 0 0 3.5px rgba(219, 83, 35, 0.18);
+  outline: none;
+}
+
+/* ==========================================================================
+   Mode Sombre — Fenêtres Modales (Haut Contraste : Blanc et Gris)
+   ========================================================================== */
+.mode-sombre .fond-modale,
+.page-client.mode-sombre .fond-modale,
+.page-admin.mode-sombre .fond-modale {
+  background: rgba(4, 9, 16, 0.78);
+}
+
+.mode-sombre .boite-modale,
+.page-client.mode-sombre .boite-modale,
+.page-admin.mode-sombre .boite-modale {
+  background-color: #111e30 !important;
+  border: 1.5px solid #1e324d !important;
+  color: #e2e8f0 !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7) !important;
+}
+
+.mode-sombre .boite-modale h4,
+.mode-sombre .boite-modale h5,
+.mode-sombre .boite-modale h6,
+.page-client.mode-sombre .boite-modale h5,
+.page-admin.mode-sombre .boite-modale h5 {
+  color: #ffffff !important;
+}
+
+.mode-sombre .boite-modale p,
+.mode-sombre .boite-modale label,
+.mode-sombre .boite-modale .form-label,
+.page-client.mode-sombre .boite-modale .form-label {
+  color: #cbd5e1 !important;
+}
+
+.mode-sombre .boite-modale strong,
+.mode-sombre .boite-modale b {
+  color: #ffffff !important;
+}
+
+.mode-sombre .boite-modale .text-muted,
+.mode-sombre .boite-modale .text-secondary {
+  color: #94a3b8 !important;
+}
+
+.mode-sombre .boite-modale .text-dark {
+  color: #ffffff !important;
+}
+
+.mode-sombre .boite-modale hr {
+  border-color: #1e324d !important;
+  opacity: 0.8;
+}
+
+.mode-sombre .boite-modale .bg-light,
+.page-client.mode-sombre .boite-modale .bg-light {
+  background-color: #16263d !important;
+  border-color: #1e324d !important;
+  color: #e2e8f0 !important;
+}
+
+.mode-sombre .boite-modale .form-control,
+.mode-sombre .boite-modale .form-select,
+.page-client.mode-sombre .boite-modale .form-control,
+.page-client.mode-sombre .boite-modale .form-select,
+.page-admin.mode-sombre .boite-modale .form-control,
+.page-admin.mode-sombre .boite-modale .form-select {
+  background-color: #0b131e !important;
+  color: #ffffff !important;
+  border: 1.5px solid #1e324d !important;
+}
+
+.mode-sombre .boite-modale .form-control:focus,
+.mode-sombre .boite-modale .form-select:focus {
+  background-color: #0f1a29 !important;
+  border-color: #DB5323 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 3.5px rgba(219, 83, 35, 0.25) !important;
+}
+
+.mode-sombre .boite-modale .form-control::placeholder {
+  color: #64748b !important;
+}
+
+.mode-sombre .boite-modale .btn-close,
+.page-client.mode-sombre .boite-modale .btn-close,
+.page-admin.mode-sombre .boite-modale .btn-close {
+  filter: invert(1) brightness(2) !important;
+  opacity: 0.85;
+}
+
+.mode-sombre .boite-modale .btn-close:hover {
+  opacity: 1;
+}
+
+.mode-sombre .boite-modale .btn-light,
+.page-client.mode-sombre .boite-modale .btn-light,
+.page-admin.mode-sombre .boite-modale .btn-light {
+  background-color: #1e324d !important;
+  border-color: #2b456b !important;
+  color: #ffffff !important;
+}
+
+.mode-sombre .boite-modale .btn-light:hover {
+  background-color: #274063 !important;
+  color: #ffffff !important;
+}

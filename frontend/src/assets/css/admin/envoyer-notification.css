@@ -1,0 +1,39 @@
+/* ==========================================================================
+   DIA TaxiBrousse — Diffusion Notification Admin (envoyer-notification.css)
+   ========================================================================== */
+
+.cadre-selection-users {
+  background-color: #f8fafc;
+  border: 1px solid #C0C0BF;
+  border-radius: 12px;
+  padding: 0.85rem;
+}
+
+.liste-voyageurs-scroll {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+.item-voyageur-choix {
+  display: flex;
+  align-items: center;
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid #f1f5f9;
+  cursor: pointer;
+  transition: background-color 0.12s;
+}
+
+.item-voyageur-choix:last-child {
+  border-bottom: none;
+}
+
+.item-voyageur-choix:hover {
+  background-color: rgba(255, 231, 168, 0.2);
+}
+
+.item-voyageur-choix.actif {
+  background-color: rgba(19, 56, 92, 0.08);
+}

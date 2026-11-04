@@ -1,0 +1,12 @@
+/* ==========================================================================
+   DIA TaxiBrousse � Fichier CSS Client Principal (Agr�gateur)
+   Importe tous les modules CSS clients s�par�s.
+   Pr�f�rez importer directement le fichier sp�cifique � chaque page.
+   ========================================================================== */
+
+@import "./base.css";
+@import "./navbar.css";
+@import "./footer.css";
+@import "./dashboard.css";
+@import "./tarifs.css";
+@import "./reservation.css";

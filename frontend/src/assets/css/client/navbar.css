@@ -1,0 +1,220 @@
+/* ==========================================================================
+   DIA TaxiBrousse — Barre de Navigation Client (Fond Blanc Épuré)
+   ========================================================================== */
+
+.barre-navigation {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--bordure-couleur, #e2e8f0);
+  padding: 0 2.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05);
+}
+
+.mode-sombre .barre-navigation {
+  background-color: var(--bg-carte, #111e30);
+  border-bottom-color: var(--bordure-couleur, #1e324d);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.logo-conteneur {
+  display: flex;
+  align-items: center;
+  /*gap: 0.75rem;*/
+  text-decoration: none;
+  line-height: 1;
+}
+
+/* Logo nettement agrandi pour une excellente lisibilité */
+.logo-image {
+  height: 150px;
+  max-height: 150px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+  display: block;
+}
+
+.logo-image:hover {
+  transform: scale(1.04);
+}
+
+.logo-texte {
+  font-family: var(--police-titre);
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #13385C;
+}
+
+.mode-sombre .logo-texte {
+  color: #ffffff;
+}
+
+.liens-navigation {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.lien-nav {
+  text-decoration: none;
+  font-family: var(--police-texte);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #334155;
+  padding: 0.65rem 1.4rem;
+  border-radius: 10px;
+  transition: all 0.18s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  letter-spacing: -0.01em;
+}
+
+.mode-sombre .lien-nav {
+  color: #cbd5e1;
+}
+
+.lien-nav:hover {
+  color: #DB5323;
+  background-color: rgba(219, 83, 35, 0.08);
+}
+
+.lien-nav.actif {
+  color: #ffffff;
+  background-color: #DB5323;
+  font-weight: 700;
+  box-shadow: 0 3px 10px rgba(219, 83, 35, 0.35);
+}
+
+/* Boutons secondaires dans la nav */
+.bouton-theme,
+.select-langue {
+  background: var(--bg-carte-alt, #f1f5f9);
+  border: 1px solid var(--bordure-couleur, #e2e8f0);
+  color: #334155;
+  border-radius: 10px;
+  padding: 0.45rem 0.95rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.18s ease;
+}
+
+.mode-sombre .bouton-theme,
+.mode-sombre .select-langue {
+  color: #f1f5f9;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.bouton-theme:hover,
+.select-langue:hover {
+  border-color: #cbd5e1;
+  background-color: #e2e8f0;
+}
+
+.mode-sombre .bouton-theme:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+/* Bouton Téléphone / Agence — mis en avant */
+.bouton-agence-nav {
+  background-color: #13385C;
+  color: #ffffff;
+  border: 2px solid #13385C;
+  border-radius: 10px;
+  padding: 0.6rem 1.3rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 10px rgba(19, 56, 92, 0.25);
+}
+
+.mode-sombre .bouton-agence-nav {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #FFE7A8;
+  border-color: rgba(255, 231, 168, 0.35);
+}
+
+.bouton-agence-nav:hover {
+  background-color: #0d2740;
+  border-color: #0d2740;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 16px rgba(19, 56, 92, 0.35);
+}
+
+.mode-sombre .bouton-agence-nav:hover {
+  border-color: #DB5323;
+  background-color: #DB5323;
+  color: #ffffff;
+}
+
+/* Bouton CTA / Connexion — mis en avant */
+.barre-navigation .btn-primary {
+  background-color: #DB5323 !important;
+  border-color: #DB5323 !important;
+  color: #ffffff !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  padding: 0.6rem 1.5rem !important;
+  border-radius: 10px !important;
+  box-shadow: 0 4px 14px rgba(219, 83, 35, 0.35);
+  transition: all 0.2s ease;
+}
+
+.barre-navigation .btn-primary:hover {
+  background-color: #c24419 !important;
+  border-color: #c24419 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(194, 68, 25, 0.45);
+}
+
+.barre-navigation .btn-outline-primary {
+  border-color: #13385C;
+  color: #13385C;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.55rem 1.3rem;
+}
+
+.barre-navigation .btn-outline-primary:hover {
+  background-color: #13385C;
+  color: #ffffff;
+}
+
+.mode-sombre .barre-navigation .btn-outline-primary {
+  border-color: #FFE7A8;
+  color: #FFE7A8;
+}
+
+/* ---------------- Responsive Navbar ---------------- */
+@media (max-width: 992px) {
+  .barre-navigation {
+    padding: 0 1rem;
+  }
+
+  .logo-image {
+    height: 60px;
+    max-height: 60px;
+  }
+
+  .bouton-agence-nav span {
+    display: none;
+  }
+}
+
+

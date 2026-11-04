@@ -1,0 +1,411 @@
+/* ==========================================================================
+   DIA TaxiBrousse — Authentification Moderne (Inspiré Design Studio / Image 2)
+   ========================================================================== */
+
+/* Conteneur plein écran avec accent chaleureux */
+.page-auth {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8fafc;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(219, 83, 35, 0.07) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(19, 56, 92, 0.06) 0%, transparent 45%);
+  padding: 2.5rem 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Accent décoratif fluide en arrière-plan */
+.page-auth::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 480px;
+  height: 480px;
+  background: linear-gradient(135deg, rgba(219, 83, 35, 0.14) 0%, rgba(255, 231, 168, 0.15) 100%);
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  filter: blur(40px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Carte centrale épurée */
+.carte-auth {
+  width: 100%;
+  max-width: 460px;
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 20px 40px -12px rgba(15, 23, 42, 0.08);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* En-tête avec bouton retour & logo épuré */
+.haut-auth {
+  background: #ffffff;
+  padding: 2rem 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f5f9;
+  position: relative;
+}
+
+.logo-auth {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.logo-auth:hover {
+  transform: scale(1.04);
+}
+
+/* Bouton retour rond & discret */
+.bouton-retour {
+  color: #475569;
+  background-color: #f1f5f9;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.bouton-retour:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+  transform: translateX(-2px);
+}
+
+/* Corps du formulaire */
+.bas-auth {
+  background-color: #ffffff;
+  padding: 2rem 2.25rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.entete-auth {
+  text-align: left;
+  margin-bottom: 1.75rem;
+}
+
+.titre-auth {
+  font-family: var(--police-titre);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.sous-titre-auth {
+  font-family: var(--police-texte);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #64748b;
+  margin-top: 0.4rem;
+  margin-bottom: 0;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+/* Formulaire et champs fluides */
+.formulaire-auth {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.ligne-deux-colonnes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+/* Groupe de saisie style input moderne */
+.champ-groupe {
+  background-color: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 0.65rem 1rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.champ-groupe:hover {
+  border-color: #cbd5e1;
+}
+
+.champ-groupe:focus-within {
+  background-color: #ffffff;
+  border-color: #DB5323;
+  box-shadow: 0 0 0 3.5px rgba(219, 83, 35, 0.12);
+}
+
+.champ-label {
+  font-family: var(--police-texte);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.champ-saisie {
+  font-family: var(--police-texte);
+  border: none;
+  background: transparent;
+  padding: 0.1rem 0;
+  font-size: 0.95rem;
+  color: #13385C;
+  font-weight: 500;
+  outline: none;
+  width: 100%;
+}
+
+.champ-saisie::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+/* Messages d'erreur et succès épurés */
+.boite-erreur {
+  background-color: #fff1f2;
+  border: 1px solid #ffe4e6;
+  border-left: 4px solid #f43f5e;
+  color: #9f1239;
+  font-family: var(--police-texte);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.boite-succes {
+  background-color: #f0fdf4;
+  border: 1px solid #dcfce7;
+  border-left: 4px solid #10b981;
+  color: #14532d;
+  font-family: var(--police-texte);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Bouton d'action principal CTA */
+.bouton-action {
+  background-color: #DB5323;
+  color: #ffffff;
+  font-family: var(--police-texte);
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  padding: 0.9rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(219, 83, 35, 0.28);
+}
+
+.bouton-action:hover:not(:disabled) {
+  background-color: #c24419;
+  box-shadow: 0 6px 18px rgba(194, 68, 25, 0.35);
+  transform: translateY(-1px);
+}
+
+.bouton-action:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.bouton-action:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Lien de bascule discret */
+.lien-bascule {
+  text-align: center;
+  font-family: var(--police-texte);
+  font-size: 0.88rem;
+  color: #64748b;
+  margin-top: 1.5rem;
+}
+
+.lien-bascule a {
+  color: #DB5323;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.lien-bascule a:hover {
+  color: #c24419;
+  text-decoration: underline;
+}
+
+/* ---------------- Responsive Authentification ---------------- */
+@media (max-width: 540px) {
+  .page-auth {
+    padding: 1.25rem 0.85rem;
+    align-items: flex-start;
+  }
+
+  .carte-auth {
+    border-radius: 20px;
+  }
+
+  .haut-auth {
+    padding: 1.5rem 1.25rem 0.85rem;
+  }
+
+  .bas-auth {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .titre-auth {
+    font-size: 1.45rem;
+  }
+
+  .ligne-deux-colonnes {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+}
+
+/* ==========================================================================
+   Mode Sombre — Pages de Connexion & Inscription
+   ========================================================================== */
+.mode-sombre.page-auth,
+.mode-sombre .page-auth,
+body.mode-sombre .page-auth {
+  background-color: #0b131e !important;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(219, 83, 35, 0.09) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(19, 56, 92, 0.22) 0%, transparent 45%) !important;
+}
+
+.mode-sombre .carte-auth {
+  background: #111e30 !important;
+  border-color: #1e324d !important;
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.6) !important;
+}
+
+.mode-sombre .haut-auth {
+  background: #111e30 !important;
+  border-bottom-color: #1e324d !important;
+}
+
+.mode-sombre .corps-auth {
+  background: #111e30 !important;
+}
+
+.mode-sombre .bas-auth {
+  background: #16263d !important;
+  border-top-color: #1e324d !important;
+}
+
+.mode-sombre .titre-auth {
+  color: #ffffff !important;
+}
+
+.mode-sombre .sous-titre-auth {
+  color: #cbd5e1 !important;
+}
+
+.mode-sombre .bouton-retour {
+  background-color: #16263d !important;
+  color: #ffffff !important;
+  border: 1px solid #1e324d !important;
+}
+
+.mode-sombre .bouton-retour:hover {
+  background-color: #1e324d !important;
+  color: #DB5323 !important;
+}
+
+.mode-sombre .champ-groupe {
+  background-color: #0b131e !important;
+  border-color: #1e324d !important;
+}
+
+.mode-sombre .champ-groupe:focus-within {
+  background-color: #0f1a29 !important;
+  border-color: #DB5323 !important;
+  box-shadow: 0 0 0 3.5px rgba(219, 83, 35, 0.25) !important;
+}
+
+.mode-sombre .champ-label,
+.mode-sombre .page-auth .form-label {
+  color: #cbd5e1 !important;
+}
+
+.mode-sombre .champ-saisie {
+  color: #ffffff !important;
+}
+
+.mode-sombre .champ-saisie::placeholder {
+  color: #64748b !important;
+}
+
+.mode-sombre .champ-input,
+.mode-sombre .page-auth .form-control,
+.mode-sombre .page-auth .form-select {
+  background-color: #0b131e !important;
+  border-color: #1e324d !important;
+  color: #ffffff !important;
+}
+
+.mode-sombre .champ-input:focus,
+.mode-sombre .page-auth .form-control:focus {
+  background-color: #0f1a29 !important;
+  border-color: #DB5323 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 3.5px rgba(219, 83, 35, 0.25) !important;
+}
+
+.mode-sombre .champ-input::placeholder {
+  color: #64748b !important;
+}
+
+.mode-sombre .lien-mot-de-passe,
+.mode-sombre .texte-lien,
+.mode-sombre .lien-bascule {
+  color: #cbd5e1 !important;
+}
+
+.mode-sombre .badge-role-auth {
+  background-color: #1e324d !important;
+  color: #FFE7A8 !important;
+}
+

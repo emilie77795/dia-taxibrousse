@@ -1,0 +1,10 @@
+/* ==========================================================================
+   DIA TaxiBrousse � Fichier CSS Admin Principal (Agr�gateur)
+   Importe tous les modules CSS admin s�par�s.
+   Pr�f�rez importer directement le fichier sp�cifique � chaque vue.
+   ========================================================================== */
+
+@import "./layout.css";
+@import "./dashboard.css";
+@import "./tables.css";
+@import "./modales.css";

@@ -1,0 +1,475 @@
+/* ==========================================================================
+   DIA TaxiBrousse — Base Client : Thème & Variables Épurées
+   ========================================================================== */
+
+/* ---------------- Thème Clair (Par défaut) ---------------- */
+.page-client {
+  --bg-page: #f8fafc;
+  --bg-carte: #ffffff;
+  --bg-carte-alt: #f1f5f9;
+  --texte-principal: #0f172a;
+  --texte-secondaire: #64748b;
+  --bordure-couleur: #e2e8f0;
+  --ombre-douce: 0 1px 3px 0 rgba(16, 24, 40, 0.04), 0 8px 24px -4px rgba(16, 24, 40, 0.04);
+  --ombre-forte: 0 4px 6px -2px rgba(16, 24, 40, 0.03), 0 16px 36px -4px rgba(16, 24, 40, 0.08);
+  --nav-bg: rgba(255, 255, 255, 0.92);
+
+  /* Palette officielle DIA TaxiBrousse (cohérente avec variables.css) */
+  --couleur-bleu: #13385C;
+  --couleur-orange: #DB5323;
+  --couleur-ambre: #DB5323;
+  --couleur-creme: #FFE7A8;
+  --couleur-bleu-roi: #13385C;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-page);
+  color: var(--texte-principal);
+  font-family: var(--police-texte, 'Figtree', sans-serif);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* ---------------- Thème Sombre (Dark Mode Haut Contraste) ---------------- */
+/* ---------------- Thème Sombre (Dark Mode Haut Contraste : Blanc & Gris) ---------------- */
+.mode-sombre,
+.mode-sombre .page-client,
+.page-client.mode-sombre {
+  --bg-page: #0b131e;
+  --bg-carte: #111e30;
+  --bg-carte-alt: #16263d;
+  --texte-principal: #ffffff;
+  --texte-secondaire: #cbd5e1;
+  --bordure-couleur: #1e324d;
+  --ombre-douce: 0 4px 20px rgba(0, 0, 0, 0.45);
+  --ombre-forte: 0 12px 36px rgba(0, 0, 0, 0.65);
+  --nav-bg: rgba(17, 30, 48, 0.95);
+}
+
+/* Textes à haut contraste en mode sombre : blancs et gris clairs */
+.mode-sombre h1,
+.mode-sombre h2,
+.mode-sombre h3,
+.mode-sombre h4,
+.mode-sombre h5,
+.mode-sombre h6,
+.mode-sombre .titre-page,
+.mode-sombre .nom-destination,
+.mode-sombre .titre-service-style,
+.mode-sombre .titre-modele-trajet,
+.mode-sombre .valeur-carac,
+.mode-sombre strong,
+.mode-sombre b,
+.mode-sombre .fw-bold,
+.mode-sombre .text-dark {
+  color: #ffffff !important;
+}
+
+.mode-sombre p,
+.mode-sombre .paragraphe-guide,
+.mode-sombre .desc-service-style,
+.mode-sombre .localisation-region,
+.mode-sombre .text-secondary,
+.mode-sombre .label-carac {
+  color: #cbd5e1 !important;
+}
+
+.mode-sombre .text-muted {
+  color: #94a3b8 !important;
+}
+
+/* Surcharges fonds et bordures en mode sombre */
+.mode-sombre .bg-white,
+.mode-sombre .carte-recherche,
+.mode-sombre .carte-trajet-moderne,
+.mode-sombre .carte-vol-billet,
+.mode-sombre .bloc-blanc {
+  background-color: var(--bg-carte, #111e30) !important;
+  color: #ffffff !important;
+  border-color: var(--bordure-couleur, #1e324d) !important;
+}
+
+.mode-sombre .bg-light,
+.mode-sombre .table-light {
+  background-color: var(--bg-carte-alt, #16263d) !important;
+  color: #cbd5e1 !important;
+  border-color: var(--bordure-couleur, #1e324d) !important;
+}
+
+.mode-sombre .border,
+.mode-sombre .border-top,
+.mode-sombre .border-bottom,
+.mode-sombre .border-start,
+.mode-sombre .border-end {
+  border-color: var(--bordure-couleur, #1e324d) !important;
+}
+
+/* Formulaires et champs de saisie en mode sombre */
+.mode-sombre .form-control,
+.mode-sombre .form-select {
+  background-color: #16263d !important;
+  color: #ffffff !important;
+  border-color: #1e324d !important;
+}
+
+.mode-sombre .form-control:focus,
+.mode-sombre .form-select:focus {
+  background-color: #1a2c47 !important;
+  color: #ffffff !important;
+  border-color: #DB5323 !important;
+  box-shadow: 0 0 0 0.25rem rgba(219, 83, 35, 0.25) !important;
+}
+
+.mode-sombre .form-control::placeholder {
+  color: #94a3b8 !important;
+}
+
+.mode-sombre .input-group-text {
+  background-color: #16263d !important;
+  color: #ffffff !important;
+  border-color: #1e324d !important;
+}
+
+.mode-sombre .form-label {
+  color: #e2e8f0 !important;
+}
+
+/* Badges en mode sombre */
+.mode-sombre .badge.bg-light {
+  background-color: #1e324d !important;
+  color: #e2e8f0 !important;
+  border-color: #274063 !important;
+}
+
+.mode-sombre .badge.bg-white {
+  background-color: #16263d !important;
+  color: #ffffff !important;
+  border-color: #274063 !important;
+}
+
+/* Surcharges fonds semi-transparents en mode sombre */
+.mode-sombre .bg-primary.bg-opacity-10 {
+  background-color: rgba(19, 56, 92, 0.5) !important;
+}
+
+.mode-sombre .bg-warning.bg-opacity-10 {
+  background-color: rgba(219, 83, 35, 0.25) !important;
+}
+
+/* Boutons en mode sombre (Haut Contraste : Blanc et Gris) */
+.mode-sombre .btn-outline-primary {
+  color: #38bdf8 !important;
+  border-color: #38bdf8 !important;
+  background-color: transparent !important;
+}
+
+.mode-sombre .btn-outline-primary:hover,
+.mode-sombre .btn-outline-primary:focus {
+  background-color: #0284c7 !important;
+  border-color: #0284c7 !important;
+  color: #ffffff !important;
+}
+
+.mode-sombre .btn-outline-secondary {
+  color: #cbd5e1 !important;
+  border-color: #475569 !important;
+  background-color: transparent !important;
+}
+
+.mode-sombre .btn-outline-secondary:hover {
+  background-color: #1e293b !important;
+  color: #ffffff !important;
+}
+
+.mode-sombre .btn-secondary,
+.mode-sombre .btn-light {
+  background-color: #16263d !important;
+  border-color: #1e324d !important;
+  color: #ffffff !important;
+}
+
+.mode-sombre .btn-secondary:hover,
+.mode-sombre .btn-light:hover {
+  background-color: #1f3657 !important;
+  border-color: #2b4975 !important;
+  color: #ffffff !important;
+}
+
+/* ---------------- Zone principale ---------------- */
+.page-client > main {
+  flex-grow: 1;
+}
+
+/* ==========================================================================
+   Boutons Bootstrap harmonis�s avec la palette officielle DIA TaxiBrousse
+   (#13385C bleu, #DB5323 orange, #FFE7A8 cr�me, #C0C0BF gris)
+   ========================================================================== */
+.page-client .btn,
+.btn {
+  font-family: var(--police-texte, 'Figtree', sans-serif);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  border-radius: 10px !important;
+  transition: all 0.2s ease;
+}
+
+.page-client .btn.btn-sm,
+.btn.btn-sm {
+  border-radius: 8px !important;
+}
+
+.page-client .btn.btn-lg,
+.btn.btn-lg {
+  border-radius: 12px !important;
+}
+
+/* Surcharge universelle des classes pilules sur tous les boutons */
+.page-client .btn.rounded-pill,
+.btn.rounded-pill,
+button.btn.rounded-pill,
+a.btn.rounded-pill {
+  border-radius: 10px !important;
+}
+
+.page-client .btn-sm.rounded-pill,
+.btn-sm.rounded-pill {
+  border-radius: 8px !important;
+}
+
+.page-client .btn-primary {
+  background-color: var(--couleur-orange, #DB5323) !important;
+  border-color: var(--couleur-orange, #DB5323) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(219, 83, 35, 0.3);
+}
+
+.page-client .btn-primary:hover,
+.page-client .btn-primary:focus {
+  background-color: #c24419 !important;
+  border-color: #c24419 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(194, 68, 25, 0.4);
+}
+
+.page-client .btn-outline-primary {
+  color: var(--couleur-bleu, #13385C) !important;
+  border-color: var(--couleur-bleu, #13385C) !important;
+  background-color: transparent !important;
+}
+
+.page-client .btn-outline-primary:hover,
+.page-client .btn-outline-primary:focus {
+  background-color: var(--couleur-bleu, #13385C) !important;
+  border-color: var(--couleur-bleu, #13385C) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+.page-client .btn-secondary,
+.page-client .btn-light {
+  background-color: var(--bg-carte-alt, #f1f5f9) !important;
+  border-color: var(--bordure-couleur, #e2e8f0) !important;
+  color: var(--texte-principal, #0f172a) !important;
+}
+
+.page-client .btn-secondary:hover,
+.page-client .btn-light:hover {
+  background-color: var(--couleur-bleu, #13385C) !important;
+  border-color: var(--couleur-bleu, #13385C) !important;
+  color: #ffffff !important;
+}
+
+.page-client .btn-danger {
+  background-color: #dc2626 !important;
+  border-color: #dc2626 !important;
+  color: #ffffff !important;
+}
+
+.page-client .btn-success {
+  background-color: #16a34a !important;
+  border-color: #16a34a !important;
+  color: #ffffff !important;
+}
+
+.page-client .btn:disabled,
+.page-client .btn.disabled {
+  opacity: 0.6;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Badges harmonis�s avec la palette officielle */
+.page-client .badge.bg-primary {
+  background-color: var(--couleur-bleu, #13385C) !important;
+}
+
+.page-client .badge.bg-warning {
+  background-color: var(--couleur-creme, #FFE7A8) !important;
+  color: var(--couleur-bleu, #13385C) !important;
+}
+
+.page-client .badge.bg-secondary {
+  background-color: #C0C0BF !important;
+  color: var(--couleur-bleu, #13385C) !important;
+}
+
+/* Champs de formulaire Bootstrap harmonis�s (focus orange DIA) */
+.page-client .form-control,
+.page-client .form-select,
+.form-select {
+  border-radius: 12px;
+  border: 1.5px solid var(--bordure-couleur, #e2e8f0);
+}
+
+.page-client .form-control:focus,
+.page-client .form-select:focus,
+.form-select:focus {
+  border-color: var(--couleur-orange, #DB5323);
+  box-shadow: 0 0 0 3.5px rgba(219, 83, 35, 0.12);
+}
+
+/* Liste déroulante avec l'icône officielle caret-down.png de /icons/autres/ */
+.page-client .form-select,
+.form-select,
+select.form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("/icons/autres/caret-down.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 14px center !important;
+  background-size: 16px 16px !important;
+  padding-right: 42px !important;
+  cursor: pointer;
+}
+
+.mode-sombre .form-select,
+.mode-sombre select.form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23ffffff' d='M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z'/%3E%3C/svg%3E") !important;
+}
+
+/* ---------------- Flèches icône caret-down.png (Retour, Suivant, Déroulant) ---------------- */
+.icone-caret {
+  width: 17px;
+  height: 17px;
+  object-fit: contain;
+  vertical-align: -0.15em;
+  display: inline-block;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.btn-sm .icone-caret {
+  width: 15px;
+  height: 15px;
+}
+
+.btn-lg .icone-caret {
+  width: 20px;
+  height: 20px;
+}
+
+.icone-caret-gauche {
+  transform: rotate(90deg); /* Pointe vers la gauche pour "Retour" */
+}
+
+.icone-caret-droite {
+  transform: rotate(-90deg); /* Pointe vers la droite pour "Suivant / Voir" */
+}
+
+.icone-caret-bas {
+  transform: rotate(0deg);
+}
+
+.icone-caret-haut {
+  transform: rotate(180deg);
+}
+
+/* En mode sombre ou sur fond contrasté */
+.mode-sombre .icone-caret:not(.sans-inversion),
+.btn-primary .icone-caret,
+.btn-danger .icone-caret,
+.btn-dark .icone-caret,
+.icone-sur-fond-sombre.icone-caret {
+  filter: brightness(0) invert(1);
+}
+/* ---------------- Typographies communes ---------------- */
+.titre-page {
+  font-family: var(--police-titre, 'Figtree', sans-serif);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--texte-principal);
+}
+
+.sous-titre-badge {
+  font-family: var(--police-texte, 'Figtree', sans-serif);
+  color: var(--couleur-orange);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 0.35rem;
+}
+
+.paragraphe-guide {
+  font-family: var(--police-texte, 'Figtree', sans-serif);
+  color: var(--texte-secondaire);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ---------------- Gestion icônes ---------------- */
+.icone-auto {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  vertical-align: -0.15em;
+}
+
+.mode-sombre .icone-auto {
+  filter: brightness(0) invert(1);
+}
+
+.icone-sur-fond-sombre {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.icone-sur-fond-clair {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+/* ---------------- Conteneur : utilise toute la largeur disponible sans vide à droite ---------------- */
+.page-client .container-xl {
+  max-width: 100%;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1800px) {
+  .page-client .container-xl {
+    max-width: 1680px;
+  }
+}
+
+/* Section Services Accueil : centrée au milieu */
+.page-client #services .row.g-4 {
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .page-client .container-xl {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

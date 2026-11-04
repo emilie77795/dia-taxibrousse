@@ -1,0 +1,178 @@
+/* ==========================================================================
+   DIA TaxiBrousse — Styles ChatBot Popup 24h/24
+   ========================================================================== */
+
+.chatbot-bouton-flottant {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--couleur-orange, #DB5323);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 8px 24px rgba(219, 83, 35, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1050;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.chatbot-bouton-flottant:hover {
+  transform: scale(1.08);
+  background-color: #c0451a;
+}
+
+.chatbot-boite {
+  position: fixed;
+  bottom: 95px;
+  right: 24px;
+  width: 360px;
+  max-width: calc(100vw - 32px);
+  height: 500px;
+  max-height: 80vh;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 16px 40px rgba(19, 56, 92, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1050;
+  border: 1px solid #e2e8f0;
+  animation: monterChatbot 0.25s ease-out;
+}
+
+@keyframes monterChatbot {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.chatbot-entete {
+  background-color: var(--couleur-bleu, #13385C);
+  color: #ffffff;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chatbot-titre {
+  font-family: var(--police-titre, sans-serif);
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chatbot-statut-en-ligne {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #22c55e;
+  display: inline-block;
+}
+
+.chatbot-fermer {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.chatbot-messages {
+  flex: 1;
+  padding: 14px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #f8fafc;
+}
+
+.message-bulle {
+  max-width: 82%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.message-bot {
+  align-self: flex-start;
+  background-color: #ffffff;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+  border-bottom-left-radius: 4px;
+}
+
+.message-utilisateur {
+  align-self: flex-end;
+  background-color: var(--couleur-bleu, #13385C);
+  color: #ffffff;
+  border-bottom-right-radius: 4px;
+}
+
+.message-liens {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lien-chatbot {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-decoration: none;
+  border: 1px solid #bfdbfe;
+  transition: all 0.2s;
+}
+
+.lien-chatbot:hover {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.chatbot-saisie-zone {
+  display: flex;
+  padding: 10px;
+  background-color: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  gap: 8px;
+}
+
+.chatbot-saisie-input {
+  flex: 1;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.chatbot-saisie-input:focus {
+  border-color: var(--couleur-bleu, #13385C);
+}
+
+.chatbot-saisie-bouton {
+  background-color: var(--couleur-orange, #DB5323);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 0 16px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}

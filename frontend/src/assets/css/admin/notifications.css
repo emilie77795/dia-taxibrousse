@@ -1,0 +1,106 @@
+/* ==========================================================================
+   DIA TaxiBrousse — Notifications & Alertes Admin (notifications.css)
+   ========================================================================== */
+
+/* Filtres d'onglets personnalisés */
+.filtre-pill {
+  border: 1px solid #C0C0BF;
+  font-weight: 500;
+  transition: all 0.15s ease-in-out;
+}
+
+.filtre-pill-inactif {
+  background-color: #ffffff;
+  color: #1e293b;
+}
+
+.filtre-pill-inactif:hover {
+  background-color: #f1f5f9;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+.filtre-pill-actif {
+  background-color: #13385C !important;
+  border-color: #13385C !important;
+  color: #FFE7A8 !important;
+  font-weight: 600;
+}
+
+/* Texte des messages dans le tableau : toujours sombre/gris foncé, jamais bleu */
+.texte-message {
+  color: #1e293b;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+/* Ligne mise en évidence pour les demandes en attente */
+.ligne-demande-en-attente {
+  background-color: rgba(255, 231, 168, 0.22) !important;
+}
+
+/* Badges de types de notification */
+.badge-primaire {
+  background-color: #13385C;
+  color: #ffffff;
+  font-size: 0.74rem;
+}
+
+.badge-admin-message {
+  background-color: #DB5323;
+  color: #ffffff;
+  font-size: 0.74rem;
+}
+
+.badge-succes {
+  background-color: #16a34a;
+  color: #ffffff;
+  font-size: 0.74rem;
+}
+
+.badge-danger {
+  background-color: #dc2626;
+  color: #ffffff;
+  font-size: 0.74rem;
+}
+
+.badge-alerte-demande {
+  background-color: #dc2626;
+  color: #ffffff;
+  font-size: 0.74rem;
+}
+
+.badge-alerte-report {
+  background-color: #FFE7A8;
+  color: #13385C;
+  border: 1px solid #C0C0BF;
+  font-size: 0.74rem;
+}
+
+.badge-neutre {
+  background-color: #64748b;
+  color: #ffffff;
+  font-size: 0.74rem;
+}
+
+.icone-badge {
+  width: 13px;
+  height: 13px;
+  object-fit: contain;
+}
+
+/* Destinataire chip */
+.destinataire-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: #0f172a;
+}
+
+.icone-dest {
+  width: 14px;
+  height: 14px;
+  opacity: 0.65;
+}

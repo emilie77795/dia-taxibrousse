@@ -1,0 +1,291 @@
+/* ========================================================================== 
+   DIA TaxiBrousse — Dashboard Administration (Palette Officielle 4 Couleurs)
+   Palette : #13385C, #DB5323, #FFE7A8, #C0C0BF
+   ========================================================================== */
+
+.page-admin .contenu-principal > main {
+  background: #f7f7f8;
+}
+
+.page-admin .row {
+  --bs-gutter-x: 1.25rem;
+  --bs-gutter-y: 1.25rem;
+}
+
+/* Cartes statistiques DIA */
+.carte-stat {
+  background-color: #ffffff;
+  padding: 1.5rem 1.5rem !important;
+  border-radius: 20px !important;
+  border: 1px solid #C0C0BF !important;
+  box-shadow: 0 1px 3px 0 rgba(19, 56, 92, 0.04), 0 8px 24px -4px rgba(19, 56, 92, 0.04) !important;
+  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 130px;
+}
+
+.carte-stat:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px -2px rgba(19, 56, 92, 0.03), 0 16px 32px -4px rgba(19, 56, 92, 0.08) !important;
+}
+
+.carte-stat .text-muted,
+.carte-stat .label-stat {
+  color: #13385C !important;
+  opacity: 0.8;
+  font-size: 0.82rem !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+
+.carte-stat .fs-4,
+.carte-stat .valeur-stat {
+  font-family: var(--police-titre);
+  font-size: 1.85rem !important;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #13385C;
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* Cartes & conteneurs génériques du dashboard */
+.page-admin .card {
+  border: 1px solid #C0C0BF;
+  border-radius: 18px !important;
+  box-shadow: 0 1px 3px 0 rgba(19, 56, 92, 0.03), 0 8px 24px -4px rgba(19, 56, 92, 0.04) !important;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.page-admin .card-header {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #C0C0BF !important;
+  padding: 1.25rem 1.5rem !important;
+}
+
+.page-admin .card-header h5 {
+  font-family: var(--police-titre);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #13385C;
+  margin: 0;
+}
+
+.page-admin .card-body {
+  padding: 1.5rem !important;
+}
+
+/* ==========================================================================
+   Bandeaux d'alerte / rappels dashboard (Pointage, Remboursements)
+   Cartes compactes avec accent coloré, hiérarchie claire et action intégrée
+   ========================================================================== */
+.carte-alerte {
+  background-color: #ffffff;
+  border: 1px solid rgba(219, 83, 35, 0.25);
+  border-left: 4px solid var(--accent, #DB5323);
+  border-radius: 12px;
+  padding: 0.65rem 1.15rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(19, 56, 92, 0.04), 0 4px 12px -2px rgba(19, 56, 92, 0.04);
+  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.2s ease;
+}
+
+.carte-alerte:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -2px rgba(19, 56, 92, 0.03), 0 8px 16px -2px rgba(19, 56, 92, 0.08);
+}
+
+.carte-alerte--checkpoint { --accent: #DB5323; }
+
+.carte-alerte__contenu {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.carte-alerte__titre {
+  display: block;
+  font-family: var(--police-titre);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 0.15rem;
+}
+
+.carte-alerte__texte {
+  font-size: 0.88rem;
+  color: #13385C;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.carte-alerte__texte strong {
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--accent);
+}
+
+/* ==========================================================================
+   Carte « Dernières Notifications & Demandes Voyageurs »
+   Liste aérée, badge de type, message hiérarchisé, métadonnées discrètes
+   ========================================================================== */
+.carte-notifications {
+  background-color: #ffffff;
+  border: 1px solid #C0C0BF;
+  border-radius: 18px;
+  box-shadow: 0 1px 3px 0 rgba(19, 56, 92, 0.04), 0 8px 24px -4px rgba(19, 56, 92, 0.04);
+  overflow: hidden;
+}
+
+.carte-notifications__entete {
+  padding: 1.15rem 1.5rem;
+  border-bottom: 1px solid #C0C0BF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.carte-notifications__titre {
+  font-family: var(--police-titre);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #13385C;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.carte-notifications__titre img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.liste-notifs {
+  display: flex;
+  flex-direction: column;
+}
+
+.notif-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #eef1f4;
+  transition: background-color 0.15s ease;
+}
+
+.notif-item:last-child {
+  border-bottom: none;
+}
+
+.notif-item:hover {
+  background-color: rgba(255, 231, 168, 0.18);
+}
+
+.notif-corps {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.notif-entete-ligne {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.badge-type-notif {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+}
+
+.badge-type-notif--remboursement {
+  background-color: #DB5323;
+  color: #ffffff;
+}
+
+.badge-type-notif--report {
+  background-color: #FFE7A8;
+  color: #13385C;
+}
+
+.badge-type-notif--autre {
+  background-color: #C0C0BF;
+  color: #13385C;
+}
+
+.notif-message {
+  font-size: 0.86rem;
+  color: #1e293b;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+  word-break: break-word;
+}
+
+.notif-date {
+  font-size: 0.72rem;
+  color: #64748b;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-top: 0.2rem;
+}
+
+/* Responsive — bandeaux et notifications */
+@media (max-width: 767.98px) {
+  .carte-alerte {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .carte-alerte .btn {
+    flex-shrink: 0;
+  }
+
+  .notif-item {
+    padding: 0.9rem 1rem;
+  }
+
+  .notif-date {
+    width: 100%;
+    padding-left: calc(38px + 1rem);
+    padding-top: 0.15rem;
+  }
+}
+
+/* Responsive */
+@media (max-width: 767.98px) {
+  .carte-stat {
+    padding: 1.25rem !important;
+    min-height: auto;
+  }
+
+  .carte-stat .fs-4 {
+    font-size: 1.5rem !important;
+  }
+}

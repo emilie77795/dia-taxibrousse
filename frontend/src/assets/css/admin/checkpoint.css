@@ -1,0 +1,327 @@
+/* ==========================================================================
+   DIA TaxiBrousse — Page Checkpoint & Validation Embarquement (Admin)
+   Style minimaliste, moderne et simple — Palette officielle DIA
+   ========================================================================== */
+
+/* Bandeau de consigne / information compact */
+.carte-consigne {
+  background-color: #ffffff;
+  border: 1px solid #C0C0BF;
+  border-left: 4px solid #DB5323;
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  box-shadow: 0 1px 3px 0 rgba(19, 56, 92, 0.04), 0 8px 24px -4px rgba(19, 56, 92, 0.04);
+  margin-bottom: 1.5rem;
+}
+
+.carte-consigne__texte {
+  font-size: 0.85rem;
+  color: #13385C;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+  flex-grow: 1;
+  min-width: 220px;
+}
+
+.carte-consigne__texte strong {
+  font-weight: 800;
+  color: #DB5323;
+}
+
+/* Carte liste des départs du jour */
+.carte-departs {
+  background-color: #ffffff;
+  border: 1px solid #C0C0BF;
+  border-radius: 18px;
+  box-shadow: 0 1px 3px 0 rgba(19, 56, 92, 0.04), 0 8px 24px -4px rgba(19, 56, 92, 0.04);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.carte-departs__titre {
+  font-family: var(--police-titre);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #13385C;
+  margin: 0 0 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #eef1f4;
+}
+
+/* Élément départ sélectionnable — style simple et classique */
+.carte-depart {
+  border: none;
+  border-bottom: 1px solid #eef1f4;
+  border-radius: 0;
+  padding: 0.9rem 0.25rem;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.carte-depart:last-child {
+  border-bottom: none;
+}
+
+.carte-depart:hover {
+  background-color: rgba(15, 23, 42, 0.035);
+}
+
+.carte-depart.actif {
+  background-color: transparent;
+}
+
+.carte-depart.actif .horaire-depart {
+  color: #DB5323;
+}
+
+.carte-depart__haut {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+  gap: 0.5rem;
+}
+
+.horaire-depart {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--police-titre);
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  padding-right: 0.85rem;
+  border-right: 3px solid #DB5323;
+}
+
+.nb-passagers {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #13385C;
+  background-color: rgba(19, 56, 92, 0.09);
+  border-radius: 9999px;
+  padding: 0.28rem 0.7rem;
+  white-space: nowrap;
+}
+
+.trajet-depart {
+  font-family: var(--police-titre);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #13385C;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.meta-depart {
+  font-size: 0.76rem;
+  color: #64748b;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.meta-depart strong {
+  color: #13385C;
+  font-weight: 700;
+}
+
+/* En-tête du départ sélectionné (colonne droite) */
+.entete-depart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #eef1f4;
+  padding-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.heure-depart-pilule {
+  display: inline-flex;
+  align-items: center;
+  background-color: #DB5323;
+  color: #ffffff;
+  font-family: var(--police-titre);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.titre-trajet {
+  font-family: var(--police-titre);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #13385C;
+  margin: 0 0 0.3rem;
+}
+
+.details-trajet {
+  font-size: 0.82rem;
+  color: #64748b;
+  font-weight: 500;
+  margin: 0;
+}
+
+.details-trajet strong {
+  color: #13385C;
+  font-weight: 700;
+}
+
+.attendus-pilule {
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  color: #0f172a;
+  border: 1.5px solid #0f172a;
+  font-family: var(--police-titre);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+/* Cellules & lignes du tableau passagers */
+.table-passagers td {
+  vertical-align: middle;
+  padding: 0.9rem 0.85rem;
+  font-size: 0.86rem;
+}
+
+.table-passagers tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Ligne passager embarqué */
+.ligne-embarque {
+  background-color: rgba(255, 231, 168, 0.14);
+}
+
+.ticket-pilule {
+  display: inline-block;
+  color: #13385C;
+  font-family: var(--police-titre);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.nom-passager {
+  font-family: var(--police-titre);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #13385C;
+  display: block;
+  line-height: 1.3;
+  margin-bottom: 0.15rem;
+}
+
+.tel-passager {
+  display: block;
+  font-size: 0.78rem;
+  color: #64748b;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.place-pilule {
+  display: inline-block;
+  color: #13385C;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+/* Statuts de paiement & embarquement — texte coloré simple, pas de bouton */
+.paiement-ok,
+.paiement-du,
+.statut-pilule {
+  display: inline-block;
+  font-size: 0.84rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.paiement-ok {
+  color: #15803d;
+}
+
+.paiement-du {
+  color: #DB5323;
+}
+
+.statut-pilule--embarque {
+  color: #13385C;
+}
+
+.statut-pilule--attente {
+  color: #B45309;
+}
+
+/* Colonne Action — vert quand validé, rouge pour pointage à faire */
+.btn-pointage {
+  background-color: #dc2626;
+  border-color: #dc2626;
+  color: #ffffff !important;
+  box-shadow: none;
+}
+
+.btn-pointage:hover,
+.btn-pointage:focus {
+  background-color: #b91c1c;
+  border-color: #b91c1c;
+  color: #ffffff !important;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-pointage:disabled {
+  opacity: 0.6;
+}
+
+.validation-terminee {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #15803d;
+  background-color: rgba(22, 163, 74, 0.1);
+  border: 1px solid rgba(22, 163, 74, 0.35);
+  border-radius: 9999px;
+  padding: 0.3rem 0.85rem;
+  white-space: nowrap;
+}
+
+/* Responsive — Checkpoint */
+@media (max-width: 767.98px) {
+  .carte-consigne {
+    padding: 1rem;
+  }
+
+  .entete-depart {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .table-passagers td {
+    padding: 0.7rem 0.6rem;
+  }
+}

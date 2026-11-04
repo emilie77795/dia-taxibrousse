@@ -1,0 +1,23 @@
+/* ==========================================================================
+   DIA TaxiBrousse — Grille Tarifaire Admin (tarifs.css)
+   ========================================================================== */
+
+/* Boutons d'action (icônes seules) : espacés et icône parfaitement centrée */
+.page-admin .table td .btn-group {
+  gap: 0.45rem;
+}
+
+.page-admin .table td .btn-group > .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0 !important;
+  border-radius: 8px !important;
+}
+
+/* Annule la marge héritée de tables.css (prévue pour du texte) pour centrer l'icône */
+.page-admin .table td .btn-group > .btn img {
+  margin: 0 !important;
+}

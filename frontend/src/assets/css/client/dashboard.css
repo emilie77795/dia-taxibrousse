@@ -1,0 +1,436 @@
+/* ==========================================================================
+   DIA TaxiBrousse — Dashboard Client Moderne (Inspiré Image 1)
+   ========================================================================== */
+
+/* ---------------- Grand Carrousel Hero ---------------- */
+.cadre-carrousel-hero {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  height: 480px;
+  box-shadow: 0 1px 3px 0 rgba(16, 24, 40, 0.04), 0 16px 36px -4px rgba(16, 24, 40, 0.08);
+  margin-bottom: 3.5rem;
+}
+
+.piste-carrousel {
+  display: flex;
+  height: 100%;
+  transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.slide-hero {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 0 4rem;
+}
+
+.slide-voile-sombre {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.55) 55%, rgba(15, 23, 42, 0.2) 100%);
+}
+
+.slide-contenu {
+  position: relative;
+  z-index: 2;
+  max-width: 620px;
+  color: #ffffff;
+}
+
+.slide-surtitre {
+  font-family: var(--police-texte);
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #DB5323;
+  margin-bottom: 0.75rem;
+  display: inline-block;
+}
+
+.slide-titre {
+  font-family: var(--police-titre);
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  color: #ffffff;
+}
+
+.slide-description {
+  font-family: var(--police-texte);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin-bottom: 1.75rem;
+}
+
+.groupe-actions-hero {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.bouton-hero-principal {
+  background-color: #DB5323;
+  color: #ffffff !important;
+  font-family: var(--police-texte);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.8rem 1.6rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 14px rgba(219, 83, 35, 0.35);
+}
+
+.bouton-hero-principal:hover {
+  background-color: #c24419;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(194, 68, 25, 0.4);
+}
+
+.bouton-hero-info {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff !important;
+  font-family: var(--police-texte);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bouton-hero-info:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-1px);
+}
+
+/* Pagination numérotée sur la gauche */
+.pagination-verticale {
+  position: absolute;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.pastille-numero {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-family: var(--police-titre);
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pastille-numero.active {
+  background-color: #ffffff;
+  color: #0f294a;
+  border-color: #ffffff;
+  transform: scale(1.1);
+}
+
+/* ---------------- Bandeau Partenaires / Réseaux ---------------- */
+.bandeau-reseaux {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--bordure-couleur);
+  margin-bottom: 3.5rem;
+}
+
+.reseau-label {
+  font-family: var(--police-texte);
+  letter-spacing: 0.05em;
+  color: var(--texte-secondaire);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.marque-partenaire {
+  font-family: var(--police-titre);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--texte-secondaire);
+  opacity: 0.65;
+  transition: all 0.2s ease;
+}
+
+.marque-partenaire:hover {
+  opacity: 1;
+  color: #0f172a;
+}
+
+/* ---------------- Cartes Destinations / Tarifs ---------------- */
+.carte-destination {
+  background-color: var(--bg-carte);
+  border-radius: 20px;
+  border: 1px solid var(--bordure-couleur);
+  overflow: hidden;
+  box-shadow: 0 1px 3px 0 rgba(16, 24, 40, 0.03), 0 8px 24px -4px rgba(16, 24, 40, 0.04);
+  transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.carte-destination:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px -4px rgba(15, 23, 42, 0.09);
+  border-color: #cbd5e1;
+}
+
+.image-destination-cadre {
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-carte-alt);
+}
+
+.image-destination {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.carte-destination:hover .image-destination {
+  transform: scale(1.04);
+}
+
+.badge-note-etoile {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  background-color: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.corps-destination {
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.nom-destination {
+  font-family: var(--police-titre);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--texte-principal);
+  margin-bottom: 0.25rem;
+}
+
+.localisation-region {
+  font-size: 0.85rem;
+  color: var(--texte-secondaire);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.85rem;
+}
+
+.boite-fourchette-prix {
+  background-color: var(--bg-carte-alt);
+  border-radius: 12px;
+  padding: 0.75rem 0.95rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prix-chiffre {
+  font-family: var(--police-titre);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #DB5323;
+}
+
+/* ---------------- Section Services ---------------- */
+.carte-service-style {
+  background-color: var(--bg-carte);
+  border-radius: 22px;
+  border: 1px solid var(--bordure-couleur);
+  padding: 2.25rem 1.75rem;
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px 0 rgba(16, 24, 40, 0.03), 0 8px 24px -4px rgba(16, 24, 40, 0.04);
+}
+
+.carte-service-style:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px -4px rgba(15, 23, 42, 0.08);
+}
+
+.carte-service-style.carte-vedette {
+  background-color: #13385C;
+  color: #ffffff;
+  border-color: #13385C;
+}
+
+.carte-service-style.carte-vedette .titre-service-style,
+.carte-service-style.carte-vedette .desc-service-style {
+  color: #ffffff;
+}
+
+.rond-icone-service {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background-color: var(--bg-carte-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  transition: all 0.25s ease;
+}
+
+.carte-service-style:hover .rond-icone-service {
+  background-color: rgba(219, 83, 35, 0.08);
+}
+
+.carte-vedette .rond-icone-service {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.bouton-service-cta {
+  background-color: #DB5323;
+  color: #ffffff !important;
+  font-family: var(--police-texte);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.65rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(219, 83, 35, 0.35);
+  border: none;
+}
+
+.bouton-service-cta:hover {
+  background-color: #c24419;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(194, 68, 25, 0.45);
+}
+
+.titre-service-style {
+  font-family: var(--police-titre);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--texte-principal);
+  margin-bottom: 0.65rem;
+}
+
+.desc-service-style {
+  font-size: 0.9rem;
+  color: var(--texte-secondaire);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+/* ---------------- Section À Propos ---------------- */
+.section-apropos-cadre {
+  background-color: var(--bg-carte);
+  border-radius: 28px;
+  border: 1px solid var(--bordure-couleur);
+  padding: 3rem;
+  box-shadow: 0 1px 3px 0 rgba(16, 24, 40, 0.03), 0 8px 24px -4px rgba(16, 24, 40, 0.04);
+  margin-bottom: 3.5rem;
+}
+
+.image-apropos-arrondie {
+  border-radius: 20px;
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+}
+
+/* ---------------- Section Contact ---------------- */
+.carte-contact-info {
+  background-color: var(--bg-carte);
+  border: 1px solid var(--bordure-couleur);
+  border-radius: 20px;
+  padding: 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  box-shadow: 0 1px 3px 0 rgba(16, 24, 40, 0.03), 0 8px 24px -4px rgba(16, 24, 40, 0.04);
+  transition: transform 0.2s ease;
+}
+
+.carte-contact-info:hover {
+  transform: translateY(-3px);
+  border-color: #cbd5e1;
+}
+
+/* ---------------- Responsive Dashboard ---------------- */
+@media (max-width: 992px) {
+  .cadre-carrousel-hero { height: 420px; }
+  .slide-titre { font-size: 2.2rem; }
+  .slide-hero { padding: 0 2rem; }
+  .pagination-verticale { display: none; }
+}
+
+@media (max-width: 768px) {
+  .cadre-carrousel-hero {
+    height: 380px;
+    border-radius: 20px;
+  }
+  .slide-titre { font-size: 1.75rem; }
+  .slide-description { font-size: 0.9rem; }
+  .section-apropos-cadre { padding: 1.75rem 1.25rem; }
+}
+

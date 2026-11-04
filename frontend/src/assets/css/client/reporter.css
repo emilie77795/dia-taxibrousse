@@ -1,0 +1,74 @@
+/* ==========================================================================
+   DIA TaxiBrousse — Report de Voyage Client (reporter.css)
+   ========================================================================== */
+
+/* Trajet façon liste des billets */
+.resume-trajet-billet {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0.85rem 0 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.resume-trajet-billet .col-depart {
+  min-width: 130px;
+}
+
+.resume-trajet-billet .col-arrivee {
+  min-width: 120px;
+}
+
+.resume-trajet-billet .ville-code-grand {
+  font-size: 1.35rem;
+}
+
+.resume-trajet-billet .ville-nom-compact {
+  font-size: 0.95rem;
+  max-width: 160px;
+}
+
+/* Infos du bas séparées par des points aérés */
+.info-ligne {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 0.3rem;
+}
+
+.info-element + .info-element::before {
+  content: "•";
+  color: #94a3b8;
+  margin: 0 0.8rem;
+}
+
+@media (max-width: 576px) {
+  .resume-trajet-billet .col-axe {
+    padding: 0 6px;
+    min-width: 70px;
+  }
+  .resume-trajet-billet .col-depart,
+  .resume-trajet-billet .col-arrivee {
+    min-width: 0;
+  }
+  .resume-trajet-billet .ville-nom-compact {
+    max-width: 90px;
+  }
+}
+
+.btn-primary {
+  background-color: #DB5323 !important;
+  border-color: #DB5323 !important;
+  color: #ffffff !important;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #c24419 !important;
+  border-color: #c24419 !important;
+}
+
+.btn-primary:disabled {
+  background-color: #DB5323 !important;
+  border-color: #DB5323 !important;
+  opacity: 0.65;
+}

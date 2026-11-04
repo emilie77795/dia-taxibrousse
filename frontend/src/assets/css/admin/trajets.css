@@ -1,0 +1,108 @@
+/* ==========================================================================
+   DIA TaxiBrousse — Trajets & Départs Admin (trajets.css)
+   ========================================================================== */
+
+/* ID trajet : texte ardoise discret (pas de badge) */
+.page-admin .table td.text-muted {
+  color: #64748b !important;
+  font-weight: 700;
+}
+
+/* Horaire : pastille bleue douce au lieu du badge bleu plein */
+.page-admin .table td .badge.bg-primary {
+  background-color: rgba(19, 56, 92, 0.09) !important;
+  color: #13385C !important;
+  border: 1px solid rgba(19, 56, 92, 0.25) !important;
+  font-weight: 700;
+}
+
+/* Type de véhicule : pastille grise neutre discrète */
+.page-admin .table td .badge.bg-secondary {
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+  border: 1px solid #C0C0BF !important;
+  font-weight: 600;
+}
+
+/* Barre de remplissage : teintes sobres dans la palette DIA */
+.page-admin .table td .progress-bar.bg-primary {
+  background-color: #13385C !important;
+}
+
+.page-admin .table td .progress-bar.bg-warning {
+  background-color: #DB5323 !important;
+}
+
+.page-admin .table td .progress-bar.bg-danger {
+  background-color: #b45309 !important;
+}
+
+.page-admin .table td .progress {
+  background-color: #e2e8f0 !important;
+}
+
+/* Pourcentage de remplissage : ardoise sobre */
+.page-admin .table td .fw-bold.text-dark {
+  color: #0f172a !important;
+}
+
+/* Hover de ligne : gris très léger (au lieu du crème chargé) */
+.page-admin .table-hover > tbody > tr:hover > * {
+  background-color: rgba(15, 23, 42, 0.04) !important;
+}
+
+/* Boutons d'action : discrets, compacts, sans ombre */
+.page-admin .table td .btn,
+.page-admin .table td .btn-group-sm > .btn {
+  box-shadow: none !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  padding: 0.3rem 0.7rem !important;
+  font-size: 0.8rem !important;
+}
+
+/* Bouton "Modifier" (outline primaire) : contour bleu fin, texte bleu DIA */
+.page-admin .table td .btn-outline-primary {
+  color: #13385C !important;
+  border-color: rgba(19, 56, 92, 0.4) !important;
+  background-color: transparent !important;
+}
+
+.page-admin .table td .btn-outline-primary:hover {
+  color: #ffffff !important;
+  background-color: #13385C !important;
+  border-color: #13385C !important;
+}
+
+/* Bouton "Supprimer" (outline danger) : orange DIA en contour, texte orange */
+.page-admin .table td .btn-outline-danger {
+  color: #DB5323 !important;
+  border-color: rgba(219, 83, 35, 0.5) !important;
+  background-color: transparent !important;
+}
+
+.page-admin .table td .btn-outline-danger:hover {
+  color: #ffffff !important;
+  background-color: #DB5323 !important;
+  border-color: #DB5323 !important;
+}
+
+/* Boutons d'action (icônes seules) : espacés et icône parfaitement centrée */
+.page-admin .table td .btn-group {
+  gap: 0.45rem;
+}
+
+.page-admin .table td .btn-group > .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0 !important;
+  border-radius: 8px !important;
+}
+
+/* Annule la marge héritée de tables.css (prévue pour du texte) pour centrer l'icône */
+.page-admin .table td .btn-group > .btn img {
+  margin: 0 !important;
+}

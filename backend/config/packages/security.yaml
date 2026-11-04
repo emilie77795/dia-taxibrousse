@@ -1,0 +1,62 @@
+security:
+    # Hasheur de mots de passe (bcrypt/argon2 automatique)
+    password_hashers:
+        App\Entity\Utilisateur:
+            algorithm: auto
+
+    # Provider : cherche l'utilisateur en BDD par son email
+    providers:
+        utilisateur_provider:
+            entity:
+                class: App\Entity\Utilisateur
+                property: email
+
+    firewalls:
+        dev:
+            pattern: ^/(_profiler|_wdt|assets|build)/
+            security: false
+
+        # Route de login JWT (POST /api/login)
+        login:
+            pattern: ^/api/login
+            stateless: true
+            json_login:
+                check_path: /api/login
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+                username_path: email
+                password_path: mot_de_passe
+
+        # Toutes les autres routes /api/* sont protégées par JWT
+        api:
+            pattern: ^/api
+            stateless: true
+            jwt: ~
+
+        main:
+            lazy: true
+            provider: utilisateur_provider
+
+    access_control:
+        # Accès public : inscription et login
+        - { path: ^/api/register, roles: PUBLIC_ACCESS }
+        - { path: ^/api/login,    roles: PUBLIC_ACCESS }
+        # Consultation publique (Accueil, Trajets, Tarifs, Chatbot)
+        - { path: ^/api/tarifs,   roles: PUBLIC_ACCESS, methods: [GET] }
+        - { path: ^/api/fourchettes, roles: PUBLIC_ACCESS, methods: [GET] }
+        - { path: ^/api/trajets,  roles: PUBLIC_ACCESS, methods: [GET] }
+        - { path: ^/api/types-vehicules, roles: PUBLIC_ACCESS, methods: [GET] }
+        - { path: ^/api/chatbot,  roles: PUBLIC_ACCESS }
+        # Routes admin uniquement
+        - { path: ^/api/admin,    roles: ROLE_ADMIN }
+        # Toutes les autres routes API (ex: POST /api/reservations, POST /api/trajets, etc.)
+        - { path: ^/api,          roles: ROLE_USER }
+
+when@test:
+    security:
+        password_hashers:
+            App\Entity\Utilisateur:
+                algorithm: auto
+                cost: 4        # Lowest possible value for bcrypt
+                time_cost: 3   # Lowest possible value for argon
+                memory_cost: 10 # Lowest possible value for argon

@@ -1,0 +1,144 @@
+/* ==========================================================================
+   DIA TaxiBrousse — Réservations & Billets Admin (reservations.css)
+   ========================================================================== */
+
+/* Numéro de ticket : sobre, monospace, bleu DIA — pas de badge plein foncé */
+.page-admin .table td .badge.bg-dark {
+  background-color: transparent !important;
+  color: #13385C !important;
+  border: none !important;
+  font-family: 'Figtree', ui-monospace, monospace;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  padding: 0;
+}
+
+/* Badge places : discret, contour fin gris */
+.page-admin .table td .badge.bg-light {
+  background-color: #f1f5f9 !important;
+  color: #13385C !important;
+  border: 1px solid #C0C0BF !important;
+}
+
+/* Statuts — pastilles douces (fond très clair + texte coloré + fine bordure) */
+.page-admin .table td .badge.bg-primary,
+.page-admin .table td .badge.bg-success,
+.page-admin .table td .badge.bg-danger,
+.page-admin .table td .badge.bg-secondary,
+.page-admin .table td .badge.bg-avance {
+  font-weight: 700;
+  border-width: 1px;
+  border-style: solid;
+}
+
+/* Embarqué / statut par défaut → bleu doux */
+.page-admin .table td .badge.bg-primary {
+  background-color: rgba(19, 56, 92, 0.09) !important;
+  color: #13385C !important;
+  border-color: rgba(19, 56, 92, 0.25) !important;
+}
+
+/* Payé 100% → vert doux */
+.page-admin .table td .badge.bg-success {
+  background-color: rgba(22, 163, 74, 0.10) !important;
+  color: #15803d !important;
+  border-color: rgba(22, 163, 74, 0.28) !important;
+}
+
+/* Demande remboursement & Remboursé → orange doux */
+.page-admin .table td .badge.bg-danger {
+  background-color: rgba(219, 83, 35, 0.10) !important;
+  color: #DB5323 !important;
+  border-color: rgba(219, 83, 35, 0.28) !important;
+}
+
+/* Avance 50% → ambre doux */
+.page-admin .table td .badge.bg-avance {
+  background-color: rgba(217, 119, 6, 0.10) !important;
+  color: #b45309 !important;
+  border-color: rgba(217, 119, 6, 0.28) !important;
+}
+
+/* Reporté → gris doux */
+.page-admin .table td .badge.bg-secondary {
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+  border-color: #C0C0BF !important;
+}
+
+/* Solde dû : rouge sobre, moins criard */
+.page-admin .table td .text-danger {
+  color: #b45309 !important;
+}
+
+/* Hover de ligne : gris très léger (au lieu du crème chargé) */
+.page-admin .table-hover > tbody > tr:hover > * {
+  background-color: rgba(15, 23, 42, 0.04) !important;
+}
+
+/* Ligne "demande de remboursement" : crème très atténué */
+.page-admin .table-warning,
+.page-admin .table-warning > td {
+  background-color: rgba(255, 231, 168, 0.22) !important;
+}
+
+/* Boutons d'action : discrets, compacts, sans ombre lourde */
+.page-admin .table td .btn,
+.page-admin .table td .btn-group-sm > .btn {
+  box-shadow: none !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  padding: 0.3rem 0.7rem !important;
+  font-size: 0.8rem !important;
+}
+
+/* Bouton "Reporter" (outline secondaire) : contour gris fin, texte ardoise */
+.page-admin .table td .btn-outline-secondary {
+  color: #334155 !important;
+  border-color: #C0C0BF !important;
+  background-color: transparent !important;
+}
+
+.page-admin .table td .btn-outline-secondary:hover {
+  color: #13385C !important;
+  background-color: #f1f5f9 !important;
+  border-color: #94a3b8 !important;
+}
+
+/* Bouton "Rembourser" (outline danger) : orange DIA en contour, texte orange */
+.page-admin .table td .btn-outline-danger {
+  color: #DB5323 !important;
+  border-color: rgba(219, 83, 35, 0.5) !important;
+  background-color: transparent !important;
+}
+
+.page-admin .table td .btn-outline-danger:hover {
+  color: #ffffff !important;
+  background-color: #DB5323 !important;
+  border-color: #DB5323 !important;
+}
+
+/* Bouton prioritaire "Valider Remboursement" : orange DIA, sans ombre */
+.page-admin .table td .btn-primary {
+  box-shadow: none !important;
+  font-weight: 700 !important;
+}
+
+/* Alerte "demandes en attente" : fond crème très clair, bordure fine */
+.page-admin .alert-warning {
+  background-color: rgba(255, 231, 168, 0.28) !important;
+  border-color: rgba(219, 83, 35, 0.35) !important;
+  color: #13385C !important;
+}
+
+/* Bouton "Afficher ces demandes" : plus discret */
+.page-admin .alert-warning .btn-primary {
+  box-shadow: none !important;
+  font-weight: 600 !important;
+}
+
+/* Bouton "Actualiser" : contour neutre fin */
+.page-admin .btn-outline-secondary {
+  box-shadow: none !important;
+}

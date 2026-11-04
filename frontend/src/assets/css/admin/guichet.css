@@ -1,0 +1,314 @@
+/* ==========================================================================
+   STYLE GUICHET - RÉSERVATION AU COMPTOIR & GUICHET ADMINISTRATEUR
+   DIA TaxiBrousse - Charte Officielle
+   ========================================================================== */
+
+/* Cartes et conteneurs */
+.carte-guichet {
+  background: #ffffff;
+  border: 1px solid #E0E0E0;
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 14px rgba(19, 56, 92, 0.05);
+  margin-bottom: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.carte-guichet-titre {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #13385C;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #F0F4F8;
+}
+
+.carte-guichet-titre .numero-etape {
+  background: #13385C;
+  color: #ffffff;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+/* Zone filtres */
+.barre-filtres-guichet {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Badges places disponibles */
+.badge-places-dispo {
+  background: #E8F5E9;
+  color: #2E7D32;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+}
+
+.badge-places-dispo.faible {
+  background: #FFF3E0;
+  color: #E65100;
+}
+
+.badge-places-dispo.complet {
+  background: #FFEBEE;
+  color: #C62828;
+}
+
+/* Plan des places du véhicule */
+.plan-vehicule-cadre {
+  background: #F8FAFC;
+  border: 2px dashed #CBD5E1;
+  border-radius: 18px;
+  padding: 1.75rem 1.25rem;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.plan-rangee {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.plan-couloir {
+  width: 32px;
+  height: 48px;
+}
+
+.plan-siege {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  background: #ffffff;
+  border: 2px solid #CBD5E1;
+  color: #13385C;
+  user-select: none;
+  transition: all 0.18s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+}
+
+.plan-siege:hover:not(.siege-occupe):not(.conducteur-siege) {
+  border-color: #DB5323;
+  background: #FFE7A8;
+  color: #13385C;
+  transform: scale(1.08);
+}
+
+.plan-siege.siege-selectionne {
+  background: #DB5323 !important;
+  color: #ffffff !important;
+  border-color: #DB5323 !important;
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(219, 83, 35, 0.35);
+}
+
+.plan-siege.siege-occupe {
+  background: #E2E8F0 !important;
+  color: #94A3B8 !important;
+  border-color: #CBD5E1 !important;
+  cursor: not-allowed !important;
+  text-decoration: line-through;
+  opacity: 0.65;
+}
+
+.plan-siege.conducteur-siege {
+  background: #13385C !important;
+  color: #FFE7A8 !important;
+  border-color: #13385C !important;
+  cursor: default;
+  font-weight: 900;
+}
+
+/* Légende du plan */
+.legende-pastille {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+.legende-pastille.libre { background: #ffffff; border: 2px solid #CBD5E1; }
+.legende-pastille.selectionne { background: #DB5323; }
+.legende-pastille.occupe { background: #E2E8F0; border: 1px solid #94A3B8; }
+.legende-pastille.conducteur { background: #13385C; }
+
+/* Bloc récapitulatif & Total classique et harmonieux */
+.recap-total-box {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+}
+
+.recap-total-box .ligne-recap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #64748B;
+  margin-bottom: 0.45rem;
+}
+
+.recap-total-box .valeur-recap {
+  font-weight: 700;
+  color: #1E293B;
+}
+
+.recap-total-box .separateur-recap {
+  border-top: 1px solid #CBD5E1;
+  margin: 0.75rem 0;
+}
+
+.recap-total-box .montant-grand {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #13385C;
+}
+
+/* Bouton d'action classique */
+.btn-valider-guichet {
+  background-color: #13385C;
+  border-color: #13385C;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 0.85rem 1.25rem;
+  font-weight: 700;
+  font-size: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(19, 56, 92, 0.15);
+}
+
+.btn-valider-guichet:hover:not(:disabled) {
+  background-color: #1c4a75;
+  border-color: #1c4a75;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-valider-guichet:disabled {
+  background-color: #94A3B8;
+  border-color: #94A3B8;
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Modale Ticket */
+.rideau-modal-ticket {
+  position: fixed;
+  inset: 0;
+  background: rgba(19, 56, 92, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.boite-modal-ticket {
+  background: #ffffff;
+  border-radius: 20px;
+  max-width: 580px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  animation: monterModal 0.25s ease-out;
+}
+
+@keyframes monterModal {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Format Billet Imprimable */
+.billet-guichet-imprimable {
+  background: #ffffff;
+  border: 2px dashed #CBD5E1;
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 1.25rem;
+}
+
+.billet-entete {
+  background: #13385C;
+  color: #ffffff;
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.billet-corps {
+  padding: 1.25rem;
+  background: #ffffff;
+}
+
+.billet-separateur {
+  border-top: 2px dashed #E2E8F0;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.billet-separateur::before,
+.billet-separateur::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  width: 16px;
+  height: 16px;
+  background: #f1f5f9;
+  border-radius: 50%;
+}
+.billet-separateur::before { left: -20px; }
+.billet-separateur::after { right: -20px; }
+
+/* Styles d'impression */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .billet-guichet-imprimable,
+  .billet-guichet-imprimable * {
+    visibility: visible;
+  }
+  .billet-guichet-imprimable {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+  }
+  .d-print-none {
+    display: none !important;
+  }
+}

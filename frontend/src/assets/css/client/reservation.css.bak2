@@ -1,0 +1,170 @@
+/* ==========================================================================
+   DIA TaxiBrousse - Page R%C3%A9servation Client Moderne (Inspir%C3%A9 Images 1 & 4)
+   ========================================================================== */
+
+/* Barre de recherche unifi%C3%A9e / Filtres */
+.carte-recherche {
+  background-color: var(--bg-carte);
+  padding: 1.5rem 1.75rem;
+  border-radius: 20px;
+  border: 1px solid var(--bordure-couleur);
+  box-shadow: 0 1px 3px 0 rgba(16, 24, 40, 0.03), 0 8px 24px -4px rgba(16, 24, 40, 0.04);
+}
+
+.carte-recherche .form-control,
+.carte-recherche .form-select {
+  border-radius: 12px;
+  border: 1.5px solid var(--bordure-couleur);
+  padding: 0.65rem 0.95rem;
+  font-size: 0.9rem;
+  font-family: var(--police-texte);
+  background-color: var(--bg-carte);
+  color: var(--texte-principal);
+  transition: all 0.2s ease;
+}
+
+.carte-recherche .form-control:focus,
+.carte-recherche .form-select:focus {
+  border-color: #DB5323;
+  box-shadow: 0 0 0 3.5px rgba(219, 83, 35, 0.12);
+  outline: none;
+}
+
+/* Carte Trajet disponible - Style Studio Moderne */
+.carte-trajet-moderne {
+  background-color: var(--bg-carte);
+  border-radius: 20px;
+  border: 1px solid var(--bordure-couleur);
+  padding: 1.35rem;
+  box-shadow: 0 1px 3px 0 rgba(16, 24, 40, 0.03), 0 8px 24px -4px rgba(16, 24, 40, 0.04);
+  transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.25s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.carte-trajet-moderne:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px -4px rgba(15, 23, 42, 0.09);
+  border-color: #cbd5e1;
+}
+
+.entete-carte-haut {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.45rem;
+}
+
+.date-trajet-haut {
+  color: var(--texte-secondaire);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.btn-favori-trajet {
+  background-color: var(--bg-carte-alt);
+  color: #94a3b8;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--bordure-couleur);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-favori-trajet:hover {
+  transform: scale(1.08);
+  color: #DB5323;
+  background-color: #FFE7A8;
+  border-color: #FFE7A8;
+}
+
+.titre-modele-trajet {
+  font-family: var(--police-titre);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--texte-principal);
+  margin-bottom: 0.85rem;
+  line-height: 1.3;
+}
+
+.cadre-photo-vehicule {
+  width: 100%;
+  height: 175px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background-color: var(--bg-carte-alt);
+  border: 1px solid var(--bordure-couleur);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-vehicule-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.5rem;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.carte-trajet-moderne:hover .photo-vehicule-img {
+  transform: scale(1.04);
+}
+
+.grille-caracteristiques {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem 0.85rem;
+  margin-bottom: 1.1rem;
+  background-color: var(--bg-carte-alt);
+  padding: 0.85rem;
+  border-radius: 12px;
+}
+
+.item-caracteristique {
+  font-size: 0.82rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.label-carac {
+  color: var(--texte-secondaire);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.valeur-carac {
+  color: var(--texte-principal);
+  font-weight: 600;
+}
+
+.pied-carte-trajet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--bordure-couleur);
+  margin-top: auto;
+}
+
+.prix-trajet-grand {
+  font-family: var(--police-titre);
+  font-size: 1.28rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--texte-principal);
+}
+
+.btn-res

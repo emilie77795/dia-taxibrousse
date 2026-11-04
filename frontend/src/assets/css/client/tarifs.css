@@ -1,0 +1,46 @@
+/* ==========================================================================
+   DIA TaxiBrousse — Page Tarifs Client
+   ========================================================================== */
+
+/* Réutilise les classes .carte-destination, .image-destination, 
+   .corps-destination, .nom-destination, .localisation-region,
+   .boite-fourchette-prix, .prix-chiffre définies dans dashboard.css */
+
+/* Barre de recherche / filtre */
+.carte-recherche {
+  background-color: var(--bg-carte);
+  padding: 1.5rem;
+  border-radius: 20px;
+  border: 1px solid var(--bordure-couleur);
+  box-shadow: var(--ombre-douce);
+}
+
+/* Cadre et photo des véhicules sur la page Tarifs */
+.carte-destination .cadre-photo-vehicule {
+  height: 190px;
+  background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid var(--bordure-couleur);
+}
+
+.mode-sombre .carte-destination .cadre-photo-vehicule {
+  background: linear-gradient(180deg, #111e30 0%, #0d1624 100%);
+  border-bottom-color: var(--bordure-couleur);
+}
+
+.photo-vehicule-tarifs {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.35s ease;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.08));
+}
+
+.carte-destination:hover .photo-vehicule-tarifs {
+  transform: scale(1.06);
+}
